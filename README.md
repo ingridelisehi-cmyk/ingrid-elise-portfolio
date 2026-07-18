@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ingrid Elise - Portfolio + Sanity
 
-## Getting Started
+Nettsiden er koblet til Sanity og klar for innholdsredigering.
 
-First, run the development server:
+## Rask start
+
+1. Start nettsiden:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start Sanity Studio:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run studio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Aapne Studio i nettleseren:
 
-## Learn More
+`http://localhost:3000/studio`
 
-To learn more about Next.js, take a look at the following resources:
+## Miljovariabler
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Legg disse i `.env.local`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=...
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2025-02-19
+```
 
-## Deploy on Vercel
+## Hva som er koblet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Forsiden (`app/page.tsx`) henter:
+	- `siteSettings` (navn, tagline, sted)
+	- `project` med `featured == true` (utvalgte prosjekter)
+- Hvis Sanity er tom, brukes fallback-innhold automatisk.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Sanity-innholdstyper
+
+- `siteSettings`
+- `project`
+- `cvEntry`
+
+## Neste steg
+
+1. Opprett ett dokument av typen `siteSettings` i Studio.
+2. Opprett prosjekter av typen `project` og huk av `Vis på forsiden`.
+3. (Valgfritt) Legg inn `cvEntry` og koble CV-siden til Sanity ogsaa.

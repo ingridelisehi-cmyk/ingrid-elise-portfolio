@@ -1,0 +1,32 @@
+{
+  "_id": "project-ringnes-nolo",
+  "_type": "project",
+  "title": "Fra stigmatisert substitutt til aktivt valg - Ringnes",
+  "slug": {
+    "_type": "slug",
+    "current": "ringnes-nolo"
+  },
+  "category": "Markedsføring & Strategi",
+  "summary": "Strategiprosjekt for Ringnes (del av Carlsberg Group) med fokus på å øke salget av alkoholfrie og lavalkohol-produkter (NoLo) i det norske markedet. Faget Sustainability and Innovation, Høyskolen Kristiania, 2023.",
+  "challenge": "Ringnes har som mål at 10% av ølsalget skal være NoLo innen 2025, men kategorien vokser saktere enn forventet i Norge. Utfordringen: Hvordan gjøre NoLo til et aktivt valg fremfor et stigmatisert substitutt - spesielt for målgruppen småbarnsforeldre (25-45 år)?",
+  "process": "Gjennomførte spørreundersøkelse med 204 respondenter og 7 kvalitative dybdeintervjuer med småbarnsforeldre. Analyserte forbrukervaner, holdninger og barrierer mot NoLo-produkter. Utviklet tre strategiske anbefalinger basert på funn.",
+  "outcome": "Tre konkrete anbefalinger: (1) Produktinnovasjon - lansering av \"NOcktail\", en sesongbasert alkoholfri cocktail-drikk. (2) Distribusjon - tilgjengeliggjøre NoLo i nye brukssituasjoner som sportsarrangementer, skihytter og familiearrangementer. (3) Influencer-markedsføring rettet mot småbarnsforeldre.",
+  "learnings": [
+    "Norsk NoLo-marked vokser saktere enn sammenlignbare europeiske markeder",
+    "Smak og tilgjengelighet er de viktigste barrierene",
+    "Sosiale normer og stigma rundt alkoholfritt er undervurderte faktorer",
+    "Influencer-markedsføring med relevante rollemodeller kan endre holdninger"
+  ],
+  "skills": [
+    "Forbrukerinnsikt",
+    "Kvantitativ metode",
+    "Kvalitativ metode",
+    "Markedsstrategi",
+    "Produktutvikling",
+    "Bærekraft og innovasjon"
+  ],
+  "projectUrl": "https://www.ringnes.no",
+  "featured": false,
+  "order": 3,
+  "year": 2023
+}

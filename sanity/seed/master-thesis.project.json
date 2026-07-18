@@ -1,0 +1,32 @@
+{
+  "_id": "project-master-thesis-skalering",
+  "_type": "project",
+  "title": "Fra start til skalering - den grønne veien til suksess",
+  "slug": {
+    "_type": "slug",
+    "current": "fra-start-til-skalering"
+  },
+  "category": "Forskning & Strategi",
+  "summary": "En kvalitativ studie av utfordringer og muligheter nyetablerte, bærekraftige klesmerker møter i bransjen. Master i markedsføringsledelse, Høyskolen Kristiania, 2024.",
+  "challenge": "Klesindustrien er en av verdens mest forurensende, samtidig som bærekraftige merker sliter med å oppnå lønnsom vekst. Hvordan kan nyetablerte klesmerker med fokus på bærekraftig drift overleve og vokse i en konkurransedreven bransje?",
+  "process": "Gjennomførte kvalitative dybdeintervjuer med seks norske bærekraftige gründere. Analyserte interne og eksterne faktorer for vekst basert på Wiklunds vekstmodell - entreprenøriell aktivitet, ressurser, miljø og strategisk tilpasning.",
+  "outcome": "Funnene viser at vellykkede vekststrategier bygger på godt nettverk, ressursutnyttelse og gründerens evne til å skape forretningsmessig helhet. Bedrifter med formålsdrevet motivasjon har et sterkere fremtidsrettet fokus.",
+  "learnings": [
+    "Nettverk er en av de viktigste vekstfaktorene for små bærekraftige merker",
+    "Forbrukerkunnskap om bærekraft er fortsatt lav - kommunikasjon er avgjørende",
+    "Strategisk tilpasning mellom interne ressurser og eksternt miljø er nøkkelen til skalering",
+    "Formålsdrevet motivasjon gir mer langsiktig orientering"
+  ],
+  "skills": [
+    "Kvalitativ metode",
+    "Strategisk analyse",
+    "Forbrukerinnsikt",
+    "Bærekraft",
+    "Merkevareledelse",
+    "Akademisk skriving"
+  ],
+  "projectUrl": "https://www.kristiania.no/studier/master/master-i-markedsforingsledelse/",
+  "featured": true,
+  "order": 1,
+  "year": 2024
+}

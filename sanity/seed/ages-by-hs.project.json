@@ -1,0 +1,38 @@
+{
+  "_id": "project-ages-by-hs",
+  "_type": "project",
+  "title": "Ages by HS",
+  "slug": {
+    "_type": "slug",
+    "current": "ages-by-hs"
+  },
+  "category": "Entreprenørskap & Merkevare",
+  "summary": "Medgründer av et bærekraftig norsk klesmerke med fokus på kvalitet, design og ansvarlig produksjon.",
+  "challenge": "Hvordan bygge et troverdig og bærekraftig klesmerke fra bunnen av i en konkurransepreget bransje?",
+  "process": "Merkevarebygging, produsentdialog, kundekontakt, innholdsproduksjon og drift fra 2019-2026.",
+  "outcome": "Etablert nettbutikk på agesbyhs.com, aktiv Instagram-profil (@agesbyhs), lojal kundebase.",
+  "learnings": [
+    "Viktigheten av tydelig merkevareidentitet",
+    "Relasjonsbygging med produsenter tar tid men er avgjørende",
+    "Bærekraft må kommuniseres ærlig og konkret",
+    "Kundedialog er kjernen i et lite merke"
+  ],
+  "skills": [
+    "Merkevareledelse",
+    "Innholdsproduksjon",
+    "Kundedialog",
+    "Drift",
+    "Bærekraft",
+    "Kommunikasjon"
+  ],
+  "projectUrl": "https://agesbyhs.com",
+  "imageUrls": [
+    "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=3840",
+    "https://agesbyhs.com/cdn/shop/files/HJ2A2488_1_a6857a4f-659d-46b6-9cae-3d7f63b54e09.jpg?v=1729606385&width=3840",
+    "https://agesbyhs.com/cdn/shop/files/HJ2A2505.jpg?v=1729605493&width=3840",
+    "https://agesbyhs.com/cdn/shop/files/HJ2A2564.jpg?v=1729605174&width=3840"
+  ],
+  "featured": true,
+  "order": 2,
+  "year": 2026
+}

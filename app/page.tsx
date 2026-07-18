@@ -1,65 +1,118 @@
-import Image from "next/image";
+import Link from "next/link";
+import {client} from "@/sanity/lib/client";
+import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
+import {homepageQuery} from "@/sanity/lib/queries";
+import {parseHomepageData} from "@/sanity/lib/validation";
 
-export default function Home() {
+export default async function HomePage() {
+  const rawData = await client.fetch<unknown>(homepageQuery);
+  const data = parseHomepageData(rawData);
+
+  const featuredProjects = Array.from(
+    new Map(
+      [
+        ...(data.featuredProjects ?? []),
+        ...fallbackFeaturedProjects,
+      ].map((project) => [project.slug ?? project.title, project]),
+    ).values(),
+  );
+  const featuredSlugByTitle: Record<string, string> = {
+    "Ages by HS": "ages-by-hs",
+    Masteroppgave: "fra-start-til-skalering",
+    "Ringnes NoLo": "ringnes-nolo",
+    "Fra start til skalering - den grønne veien til suksess": "fra-start-til-skalering",
+    "Fra stigmatisert substitutt til aktivt valg - Ringnes": "ringnes-nolo",
+    "Digitale produktpass med Repass": "digitale-produktpass",
+    Kolleksjonslansering: "kolleksjonslansering",
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <section className="home-hero editorial-home reveal">
+        <p className="eyebrow">Hei, jeg er Ingrid.</p>
+        <div className="hero-layout editorial-hero-layout">
+          <div>
+            <h1 className="hero-title">
+              Jeg liker å forstå hva som faktisk fungerer, og gjøre mer av det.
+            </h1>
+            <p className="lead story-lead home-story-lead">
+              Jeg har bakgrunn fra markedsføring, design og kundeservice.
+              Prosjektene under viser hvordan jeg jobber.
+            </p>
+            <div className="button-row home-cta-row">
+              <Link href="/projects" className="btn">
+                Se case
+              </Link>
+              <Link href="/how-i-think" className="btn btn-secondary">
+                Hvordan jeg tenker
+              </Link>
+              <Link href="/contact" className="btn btn-secondary">
+                Kontakt
+              </Link>
+            </div>
+          </div>
+
+          <aside className="hero-note editorial-aside">
+            <p className="eyebrow">Kort fortalt</p>
+            <p className="editorial-quote">
+              Jeg bygger, tester og lærer underveis.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section editorial-section reveal">
+        <p className="eyebrow">Utvalgt arbeid</p>
+        <div className="perspective-grid projects-intro-grid">
+          <div>
+            <h2>Et utvalg prosjekter jeg har jobbet med.</h2>
+          </div>
+        </div>
+
+        <div className="grid cards-3" style={{marginTop: "1.75rem"}}>
+          {featuredProjects.map((project) => (
+            <article key={project.title} className="card project-story-card">
+              <p className="eyebrow">Case</p>
+              <h3>{project.title}</h3>
+              <p className="muted">{project.description}</p>
+              <div className="button-row" style={{marginTop: "1rem"}}>
+                <Link
+                  href={
+                    project.slug
+                      ? `/projects/${project.slug}`
+                      : featuredSlugByTitle[project.title]
+                        ? `/projects/${featuredSlugByTitle[project.title]}`
+                        : "/projects"
+                  }
+                  className="btn btn-secondary"
+                >
+                  Les case
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section reveal work-with-me home-closing">
+        <div className="closing-panel">
+          <p className="eyebrow">Om meg</p>
+          <h2>Jeg er nysgjerrig, lærevillig og liker å gjøre ideer om til noe som fungerer i praksis.</h2>
+          <p className="lead">
+            Jeg lærer raskt, spør mye, og trives best når jeg får jobbe tett
+            på både mennesker og oppgaver.
           </p>
+          <div className="button-row">
+            <Link href="/about" className="btn">
+              Les mer
+            </Link>
+            <Link href="/contact" className="btn btn-secondary">
+              Kontakt
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
+
