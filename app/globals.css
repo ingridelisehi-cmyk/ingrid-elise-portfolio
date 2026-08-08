@@ -362,7 +362,6 @@ p {
 }
 
 .instagram-embed-frame {
-  position: relative;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -375,41 +374,6 @@ p {
   width: 100%;
   min-height: 420px;
   border: 0;
-}
-
-.instagram-embed-shield {
-  position: absolute;
-  pointer-events: auto;
-  z-index: 2;
-  background: transparent;
-}
-
-.instagram-embed-shield--top {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 72px;
-}
-
-.instagram-embed-shield--bottom {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 72px;
-}
-
-.instagram-embed-shield--left {
-  top: 72px;
-  bottom: 72px;
-  left: 0;
-  width: 72px;
-}
-
-.instagram-embed-shield--right {
-  top: 72px;
-  bottom: 72px;
-  right: 0;
-  width: 72px;
 }
 
 .work-with-me {
