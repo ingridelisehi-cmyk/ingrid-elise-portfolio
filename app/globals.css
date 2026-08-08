@@ -388,28 +388,28 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  height: calc(50% - 72px);
+  height: 72px;
 }
 
 .instagram-embed-shield--bottom {
   left: 0;
   right: 0;
   bottom: 0;
-  height: calc(50% - 72px);
+  height: 72px;
 }
 
 .instagram-embed-shield--left {
-  top: calc(50% - 72px);
-  bottom: calc(50% - 72px);
+  top: 72px;
+  bottom: 72px;
   left: 0;
-  width: calc(50% - 72px);
+  width: 72px;
 }
 
 .instagram-embed-shield--right {
-  top: calc(50% - 72px);
-  bottom: calc(50% - 72px);
+  top: 72px;
+  bottom: 72px;
   right: 0;
-  width: calc(50% - 72px);
+  width: 72px;
 }
 
 .work-with-me {
