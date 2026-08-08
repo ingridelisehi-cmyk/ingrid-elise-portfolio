@@ -3,6 +3,7 @@ import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
 import {parseHomepageData} from "@/sanity/lib/validation";
+import InstagramEmbed from "@/app/components/instagram-embed";
 
 export default async function HomePage() {
   const rawData = await client.fetch<unknown>(homepageQuery);
@@ -102,39 +103,19 @@ export default async function HomePage() {
 
         <div className="video-grid">
           <div className="video-frame">
-            <iframe
-              src="https://www.instagram.com/p/CwOGsOxo3fL/embed"
-              title="Video fra Instagram"
-              loading="lazy"
-              allowFullScreen
-            />
+            <InstagramEmbed url="https://www.instagram.com/reel/CwOGsOxo3fL/" />
           </div>
 
           <div className="video-frame">
-            <iframe
-              src="https://www.instagram.com/p/DAdpM5wKkj5/embed"
-              title="Video fra Instagram"
-              loading="lazy"
-              allowFullScreen
-            />
+            <InstagramEmbed url="https://www.instagram.com/reel/DAdpM5wKkj5/" />
           </div>
 
           <div className="video-frame">
-            <iframe
-              src="https://www.instagram.com/p/DBrd-sCqUeP/embed"
-              title="Video fra Instagram"
-              loading="lazy"
-              allowFullScreen
-            />
+            <InstagramEmbed url="https://www.instagram.com/reel/DBrd-sCqUeP/" />
           </div>
 
           <div className="video-frame">
-            <iframe
-              src="https://www.instagram.com/p/CxxzmyyIQrT/embed"
-              title="Video fra Instagram"
-              loading="lazy"
-              allowFullScreen
-            />
+            <InstagramEmbed url="https://www.instagram.com/reel/CxxzmyyIQrT/" />
           </div>
         </div>
       </section>
