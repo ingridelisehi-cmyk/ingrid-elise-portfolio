@@ -4,6 +4,7 @@ import {notFound} from "next/navigation";
 import {client} from "@/sanity/lib/client";
 import {fallbackProjectDetails} from "@/sanity/lib/fallbacks";
 import {projectBySlugQuery, projectSlugsQuery} from "@/sanity/lib/queries";
+import type {ProjectDetail} from "@/sanity/lib/types";
 import {parseProjectDetail} from "@/sanity/lib/validation";
 
 type ProjectPageProps = {
@@ -27,17 +28,26 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
   const rawData = await client.fetch<unknown>(projectBySlugQuery, {slug});
   const project = parseProjectDetail(rawData) ?? fallbackProjectDetails[slug as keyof typeof fallbackProjectDetails] ?? null;
   const isMasterThesis = slug === "fra-start-til-skalering";
+  const isDigitalPassport = slug === "digitale-produktpass";
 
   if (!project) {
     notFound();
   }
 
+  const projectDetail: ProjectDetail = {
+    ...project,
+    learnings: project.learnings ? [...project.learnings] : undefined,
+    skills: project.skills ? [...project.skills] : undefined,
+    links: "links" in project && project.links ? project.links.map((link) => ({...link})) : undefined,
+    imageUrls: project.imageUrls ? [...project.imageUrls] : undefined,
+  };
+
   return (
     <article>
       <header className={isMasterThesis ? "thesis-header" : undefined}>
-        <p className="eyebrow">{project.category ?? "Prosjekt"}</p>
-        <h1>{project.title}</h1>
-        <p className="lead">{project.summary}</p>
+        <p className="eyebrow">{projectDetail.category ?? "Prosjekt"}</p>
+        <h1>{projectDetail.title}</h1>
+        <p className="lead">{projectDetail.summary}</p>
 
         {isMasterThesis ? (
           <div className="thesis-meta section" style={{marginTop: "1.5rem"}}>
@@ -49,17 +59,17 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         ) : null}
       </header>
 
-      {project.imageUrls?.length ? (
-        <section className="section grid cards-2">
-          {project.imageUrls.slice(0, 4).map((imageUrl) => (
+      {projectDetail.imageUrls?.length ? (
+        <section className={isDigitalPassport ? "section project-detail-image-section" : "section grid cards-2"}>
+          {projectDetail.imageUrls.slice(0, isDigitalPassport ? 1 : 4).map((imageUrl) => (
             <Image
               key={imageUrl}
               src={imageUrl}
-              alt={`Bilde fra ${project.title}`}
-              className="project-detail-image"
-              width={1200}
-              height={1500}
-              sizes="(max-width: 900px) 100vw, 50vw"
+              alt={`Bilde fra ${projectDetail.title}`}
+              className={isDigitalPassport ? "project-detail-image project-detail-image-hero" : "project-detail-image"}
+              width={isDigitalPassport ? 1600 : 1200}
+              height={isDigitalPassport ? 900 : 1500}
+              sizes={isDigitalPassport ? "(max-width: 900px) 100vw, 1120px" : "(max-width: 900px) 100vw, 50vw"}
             />
           ))}
         </section>
@@ -69,24 +79,24 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       <section className="section project-detail-grid">
         <div className="card">
           <p className="eyebrow">Utfordring</p>
-          <p>{project.challenge ?? "Ikke spesifisert enda."}</p>
+          <p>{projectDetail.challenge ?? "Ikke spesifisert enda."}</p>
         </div>
 
         <div className="card">
           <p className="eyebrow">Prosess</p>
-          <p>{project.process ?? "Ikke spesifisert enda."}</p>
+          <p>{projectDetail.process ?? "Ikke spesifisert enda."}</p>
         </div>
 
         <div className="card">
           <p className="eyebrow">Resultat</p>
-          <p>{project.outcome ?? "Ikke spesifisert enda."}</p>
+          <p>{projectDetail.outcome ?? "Ikke spesifisert enda."}</p>
         </div>
 
         <div className="card">
           <p className="eyebrow">Lenker</p>
-          {project.links?.length ? (
+          {projectDetail.links?.length ? (
             <div>
-              {project.links.map((link) => (
+              {projectDetail.links.map((link) => (
                 <p key={link.url}>
                   <a href={link.url} target="_blank" rel="noreferrer">
                     {link.label}
@@ -94,9 +104,9 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
                 </p>
               ))}
             </div>
-          ) : project.projectUrl ? (
-            <a href={project.projectUrl} target="_blank" rel="noreferrer">
-              {project.projectUrl}
+          ) : projectDetail.projectUrl ? (
+            <a href={projectDetail.projectUrl} target="_blank" rel="noreferrer">
+              {projectDetail.projectUrl}
             </a>
           ) : (
             <p>Ingen lenke lagt til ennå.</p>
@@ -104,11 +114,11 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </div>
       </section>
 
-      {project.learnings?.length ? (
+      {projectDetail.learnings?.length ? (
         <section className="section">
           <p className="eyebrow">Læringer</p>
           <div className="grid cards-2" style={{marginTop: "1rem"}}>
-            {project.learnings.map((learning) => (
+            {projectDetail.learnings.map((learning) => (
               <article key={learning} className="card">
                 <p>{learning}</p>
               </article>
@@ -117,11 +127,11 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </section>
       ) : null}
 
-      {project.skills?.length ? (
+      {projectDetail.skills?.length ? (
         <section className="section">
           <p className="eyebrow">Ferdigheter</p>
           <div className="skill-tags" style={{marginTop: "1rem"}}>
-            {project.skills.map((skill) => (
+            {projectDetail.skills.map((skill) => (
               <span key={skill} className="skill-tag">
                 {skill}
               </span>

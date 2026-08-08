@@ -52,7 +52,7 @@ export default async function ContactPage() {
         <div className="card">
           <h3>CV</h3>
           <p>
-            <a href="/Ingrid-Elise-CV.pdf" download>
+            <a href="/cv/download" download>
               Last ned CV
             </a>
           </p>

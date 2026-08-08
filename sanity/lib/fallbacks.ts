@@ -50,7 +50,7 @@ export const fallbackProjects = [
     year: 2023,
     summary:
       "QR-koder i hvert plagg som viser hele veien fra materiale til ferdig produkt.",
-    imageUrl: "/repass-landing.png",
+    imageUrl: "/repass-qr-code.png",
   },
   {
     title: "Kolleksjonslansering",
@@ -59,7 +59,7 @@ export const fallbackProjects = [
     year: 2023,
     summary:
       "Planla og gjennomførte lanseringseventet for en ny kolleksjon.",
-    imageUrl: "/08290C81-649C-4B7C-AB00-6D801D2FA3E8_1_105_c.jpeg",
+    imageUrl: "/launch-1.jpg",
   },
   {
     title: "Fra stigmatisert substitutt til aktivt valg - Ringnes",
@@ -97,11 +97,11 @@ export const fallbackProjectDetails = {
     summary:
       "QR-koder i hvert plagg som viser hele veien fra materiale til ferdig produkt.",
     challenge:
-      "Hvordan gjøre produksjonen til en liten, ny klesmerke transparent og etterprøvbar for kundene, i en bransje der sporbarhet er sjelden?",
+      "Hvordan gjøre produksjonen til et lite, nyetablert klesmerke transparent for kundene, i en bransje der sporbarhet er sjelden?",
     process:
       "Samarbeidet med Repasdo (nå Repass) om å integrere unike QR-koder i hvert plagg, koblet til dokumentasjon av materialer, produksjonssted og designer. Ansvarlig for å få løsningen praktisk inn i produktet og kommunisert til kundene.",
     outcome:
-      "Hvert plagg fikk sin egen digitale produktpass kundene kunne skanne. Løsningen ble trukket frem i presseomtale av merket som uvanlig for bransjen.",
+      "Hvert plagg fikk sin egen digitale \"produktpass\" kundene kunne skanne. Løsningen ble trukket frem i presseomtale av merket som innovativt for bransjen",
     links: [
       {
         label: "Ages by HS sustainability",
@@ -113,9 +113,8 @@ export const fallbackProjectDetails = {
       },
     ],
     learnings: [
-      "Sporbarhet må fungere i praksis i selve produktet, ikke bare i markedsføringen",
-      "Kundene trenger enkel tilgang til informasjon hvis bærekraftsarbeid skal bli troverdig",
-      "Små merkevarer er avhengige av tett samarbeid med eksterne partnere for å få nye løsninger ut",
+      "En QR-kode alene skaper ikke verdi – kundene må vite at den finnes for at det skal bety noe",
+      "Sporbarhet er et fremtidsrettet grep – med nye reguleringer på vei i tekstilbransjen tror vi det blir enda mer verdifullt fremover",
     ],
     skills: [
       "Produktsporbarhet",
@@ -125,11 +124,6 @@ export const fallbackProjectDetails = {
     ],
     imageUrls: [
       "/repass-landing.png",
-      "/repass-qr-code.png",
-      "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=3840",
-      "https://agesbyhs.com/cdn/shop/files/HJ2A2488_1_a6857a4f-659d-46b6-9cae-3d7f63b54e09.jpg?v=1729606385&width=3840",
-      "https://agesbyhs.com/cdn/shop/files/HJ2A2505.jpg?v=1729605493&width=3840",
-      "https://agesbyhs.com/cdn/shop/files/HJ2A2564.jpg?v=1729605174&width=3840",
     ],
   },
   "kolleksjonslansering": {
@@ -155,11 +149,7 @@ export const fallbackProjectDetails = {
         url: "https://agesbyhs.com",
       },
     ],
-    learnings: [
-      "Et lite lanseringsevent krever tydelige prioriteringer for å føles gjennomført",
-      "Helheten blir sterkere når innhold, styling og vertskap henger tett sammen",
-      "God oppfølging av leverandører er avgjørende når marginene er små",
-    ],
+    learnings: [],
     skills: [
       "Arrangementskoordinering",
       "Leverandøroppfølging",
@@ -167,8 +157,8 @@ export const fallbackProjectDetails = {
       "Vertskap og gjennomføring",
     ],
     imageUrls: [
-      "/08290C81-649C-4B7C-AB00-6D801D2FA3E8_1_105_c.jpeg",
-      "/B2A9F8E7-C89E-4E5A-9F44-8EE2F25445E7_1_105_c.jpeg",
+      "/launch-1.jpg",
+      "/launch-2.jpg",
     ],
   },
   "ringnes-nolo": {
@@ -245,10 +235,10 @@ export const fallbackProjectDetails = {
     outcome:
       "Vi etablerte nettbutikk, bygget en tydelig profil og fikk faste kunder.",
     learnings: [
-      "Viktigheten av tydelig merkevareidentitet",
-      "Relasjonsbygging med produsenter tar tid men er avgjørende",
-      "Bærekraft må kommuniseres ærlig og konkret",
+      "God relasjon til produsentene er avgjørende",
+      "Bærekraft kommuniseres best gjennom konkrete produktegenskaper, ikke som et begrep i markedsføringen",
       "Kundedialog er kjernen i et lite merke",
+      "Tilgjengelighet for kunden er en viktig faktor for vekst – pop-ups og klær i butikk ga oss både salg og verdifull tilbakemelding",
     ],
     skills: [
       "Merkevareledelse",

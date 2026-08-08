@@ -33,7 +33,7 @@ export default async function HomePage() {
         <div className="hero-layout editorial-hero-layout">
           <div>
             <h1 className="hero-title">
-              Jeg liker å forstå hva som faktisk fungerer, og gjøre mer av det.
+              Jeg liker å forstå hvorfor noe fungerer – og gjøre mer av det.
             </h1>
             <p className="lead story-lead home-story-lead">
               Jeg har bakgrunn fra markedsføring, design og kundeservice.
@@ -91,6 +91,51 @@ export default async function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section reveal">
+        <div className="video-gallery-header">
+          <p className="eyebrow">Kreativt arbeid</p>
+          <h2>Innhold og video for Ages</h2>
+        </div>
+
+        <div className="video-grid">
+          <div className="video-frame">
+            <iframe
+              src="https://www.instagram.com/p/CwOGsOxo3fL/embed"
+              title="Video fra Instagram"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="video-frame">
+            <iframe
+              src="https://www.instagram.com/p/DAdpM5wKkj5/embed"
+              title="Video fra Instagram"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="video-frame">
+            <iframe
+              src="https://www.instagram.com/p/DBrd-sCqUeP/embed"
+              title="Video fra Instagram"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="video-frame">
+            <iframe
+              src="https://www.instagram.com/p/CxxzmyyIQrT/embed"
+              title="Video fra Instagram"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
 

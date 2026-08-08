@@ -333,6 +333,34 @@ p {
   min-height: 100%;
 }
 
+.video-gallery-header {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+
+.video-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.video-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  min-height: 420px;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+}
+
 .work-with-me {
   border-top: 1px solid var(--line);
   padding-top: clamp(2.2rem, 4vw, 3.1rem);
@@ -430,9 +458,7 @@ p {
   border: 1px solid var(--line);
   margin-bottom: 1rem;
 }
-
 .project-detail-grid {
-  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.2rem;
 }
@@ -513,6 +539,19 @@ p {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border: 1px solid var(--line);
+}
+
+.project-detail-image-section {
+  display: block;
+}
+
+.project-detail-image-hero {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  object-position: center;
 }
 
 .skill-tags {
