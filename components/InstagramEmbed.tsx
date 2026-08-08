@@ -1,6 +1,6 @@
 export default function InstagramEmbed({url}: {url: string}) {
   const normalizedUrl = url.endsWith('/') ? url : `${url}/`;
-  const embedUrl = `${normalizedUrl}embed/?autoplay=1`;
+  const embedUrl = `${normalizedUrl}embed/?autoplay=1&muted=1`;
 
   return (
     <div className="instagram-embed-frame">
@@ -12,6 +12,11 @@ export default function InstagramEmbed({url}: {url: string}) {
         allowFullScreen
         referrerPolicy="strict-origin-when-cross-origin"
         sandbox="allow-same-origin allow-scripts allow-presentation"
+      />
+      <div
+        className="instagram-embed-shield"
+        aria-hidden="true"
+        title="Klikk er deaktivert"
       />
     </div>
   );

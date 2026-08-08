@@ -362,6 +362,7 @@ p {
 }
 
 .instagram-embed-frame {
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -374,6 +375,13 @@ p {
   width: 100%;
   min-height: 420px;
   border: 0;
+}
+
+.instagram-embed-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
 }
 
 .work-with-me {
