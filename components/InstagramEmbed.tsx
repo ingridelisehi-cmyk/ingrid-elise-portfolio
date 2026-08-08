@@ -13,11 +13,10 @@ export default function InstagramEmbed({url}: {url: string}) {
         referrerPolicy="strict-origin-when-cross-origin"
         sandbox="allow-same-origin allow-scripts allow-presentation"
       />
-      <div
-        className="instagram-embed-shield"
-        aria-hidden="true"
-        title="Klikk er deaktivert"
-      />
+      <div className="instagram-embed-shield instagram-embed-shield--top" aria-hidden="true" />
+      <div className="instagram-embed-shield instagram-embed-shield--bottom" aria-hidden="true" />
+      <div className="instagram-embed-shield instagram-embed-shield--left" aria-hidden="true" />
+      <div className="instagram-embed-shield instagram-embed-shield--right" aria-hidden="true" />
     </div>
   );
 }

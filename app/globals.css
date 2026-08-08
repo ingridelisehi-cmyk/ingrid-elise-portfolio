@@ -379,9 +379,37 @@ p {
 
 .instagram-embed-shield {
   position: absolute;
-  inset: 0;
+  pointer-events: auto;
   z-index: 2;
   background: transparent;
+}
+
+.instagram-embed-shield--top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(50% - 72px);
+}
+
+.instagram-embed-shield--bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(50% - 72px);
+}
+
+.instagram-embed-shield--left {
+  top: calc(50% - 72px);
+  bottom: calc(50% - 72px);
+  left: 0;
+  width: calc(50% - 72px);
+}
+
+.instagram-embed-shield--right {
+  top: calc(50% - 72px);
+  bottom: calc(50% - 72px);
+  right: 0;
+  width: calc(50% - 72px);
 }
 
 .work-with-me {
