@@ -3,7 +3,7 @@ export default function InstagramEmbed({url}: {url: string}) {
   const embedUrl = `${normalizedUrl}embed`;
 
   return (
-    <div className="instagram-embed-frame instagram-embed-frame--clean">
+    <div className="instagram-embed-frame">
       <iframe
         src={embedUrl}
         title="Instagram video"

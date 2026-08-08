@@ -367,7 +367,6 @@ p {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.7);
   min-height: 420px;
-  position: relative;
 }
 
 .instagram-embed-frame iframe {
@@ -375,22 +374,6 @@ p {
   width: 100%;
   min-height: 420px;
   border: 0;
-}
-
-/* Crop away Instagram's header/actions/footer so the focus stays on video. */
-.instagram-embed-frame--clean {
-  aspect-ratio: 9 / 16;
-  min-height: 0;
-}
-
-.instagram-embed-frame--clean iframe {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -86px;
-  width: 100%;
-  height: calc(100% + 240px);
-  min-height: 0;
 }
 
 .work-with-me {
@@ -839,11 +822,6 @@ p {
 
   .video-grid {
     grid-template-columns: 1fr;
-  }
-
-  .instagram-embed-frame--clean iframe {
-    top: -74px;
-    height: calc(100% + 210px);
   }
 }
 
