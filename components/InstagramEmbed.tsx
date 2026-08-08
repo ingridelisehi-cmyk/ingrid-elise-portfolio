@@ -12,11 +12,7 @@ declare global {
   }
 }
 
-type InstagramEmbedProps = {
-  url: string;
-};
-
-export default function InstagramEmbed({url}: InstagramEmbedProps) {
+export default function InstagramEmbed({url}: {url: string}) {
   useEffect(() => {
     if (window.instgrm) {
       window.instgrm.Embeds.process();
