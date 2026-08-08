@@ -1,9 +1,9 @@
 export default function InstagramEmbed({url}: {url: string}) {
   const normalizedUrl = url.endsWith('/') ? url : `${url}/`;
-  const embedUrl = `${normalizedUrl}embed`;
+  const embedUrl = `${normalizedUrl}embed/?autoplay=1`;
 
   return (
-    <div className="instagram-embed-frame instagram-embed-frame--locked">
+    <div className="instagram-embed-frame">
       <iframe
         src={embedUrl}
         title="Instagram video"
@@ -12,7 +12,6 @@ export default function InstagramEmbed({url}: {url: string}) {
         allowFullScreen
         referrerPolicy="strict-origin-when-cross-origin"
         sandbox="allow-same-origin allow-scripts allow-presentation"
-        tabIndex={-1}
       />
     </div>
   );

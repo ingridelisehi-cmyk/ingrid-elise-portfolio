@@ -376,10 +376,6 @@ p {
   border: 0;
 }
 
-.instagram-embed-frame--locked iframe {
-  pointer-events: none;
-}
-
 .work-with-me {
   border-top: 1px solid var(--line);
   padding-top: clamp(2.2rem, 4vw, 3.1rem);
