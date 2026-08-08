@@ -3,7 +3,7 @@ export default function InstagramEmbed({url}: {url: string}) {
   const embedUrl = `${normalizedUrl}embed`;
 
   return (
-    <div className="instagram-embed-frame">
+    <div className="instagram-embed-frame instagram-embed-frame--locked">
       <iframe
         src={embedUrl}
         title="Instagram video"
@@ -12,6 +12,7 @@ export default function InstagramEmbed({url}: {url: string}) {
         allowFullScreen
         referrerPolicy="strict-origin-when-cross-origin"
         sandbox="allow-same-origin allow-scripts allow-presentation"
+        tabIndex={-1}
       />
     </div>
   );
