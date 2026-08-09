@@ -3,6 +3,7 @@ import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
 import {parseHomepageData} from "@/sanity/lib/validation";
+import InstagramEmbed from "@/components/InstagramEmbed";
 
 export default async function HomePage() {
   const rawData = await client.fetch<unknown>(homepageQuery);
@@ -91,6 +92,20 @@ export default async function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section reveal">
+        <div className="video-gallery-header">
+          <p className="eyebrow">Kreativt arbeid</p>
+          <h2>Innhold og video for Ages</h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <InstagramEmbed url="https://www.instagram.com/reel/CwOGsOxo3fL/" />
+          <InstagramEmbed url="https://www.instagram.com/reel/CxxzmyyIQrT/" />
+          <InstagramEmbed url="https://www.instagram.com/reel/DAdpM5wKkj5/" />
+          <InstagramEmbed url="https://www.instagram.com/reel/DBrd-sCqUeP/" />
         </div>
       </section>
 
