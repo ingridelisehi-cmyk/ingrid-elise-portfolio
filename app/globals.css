@@ -264,10 +264,9 @@ p {
 
 .hero-note {
   margin-top: 0.6rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(136, 116, 91, 0.16);
   border-radius: 15px;
-  background:
-    linear-gradient(130deg, rgba(255, 255, 255, 0.5), rgba(245, 237, 227, 0.3));
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .hero-note p + p {
