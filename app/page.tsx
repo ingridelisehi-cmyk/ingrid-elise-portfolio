@@ -36,8 +36,8 @@ export default async function HomePage() {
               Jeg liker å forstå hvorfor noe fungerer – og gjøre mer av det.
             </h1>
             <p className="lead story-lead home-story-lead">
-              Jeg har bakgrunn fra markedsføring, design og kundeservice.
-              Prosjektene under viser hvordan jeg jobber.
+              Jeg kombinerer markedsføring, design og kundeinnsikt – fra idé
+              og innhold til gjennomføring og kundereise.
             </p>
             <div className="button-row home-cta-row">
               <Link href="/projects" className="btn">
@@ -55,7 +55,7 @@ export default async function HomePage() {
           <aside className="hero-note editorial-aside">
             <p className="eyebrow">Kort fortalt</p>
             <p className="editorial-quote">
-              Jeg bygger, tester og lærer underveis.
+              Markedsføring · innhold · design · kundeopplevelse
             </p>
           </aside>
         </div>
