@@ -61,6 +61,43 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="section reveal">
+        <div className="video-gallery-header">
+          <p className="eyebrow">Kreativt arbeid</p>
+          <h2>Innhold og video for Ages</h2>
+        </div>
+
+        <div className="grid cards-2 creative-video-grid">
+          <figure className="creative-video-item">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/ages-campaign-reel.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </div>
+      </section>
+
       <section className="section editorial-section reveal">
         <p className="eyebrow">Utvalgt arbeid</p>
         <div className="perspective-grid projects-intro-grid">

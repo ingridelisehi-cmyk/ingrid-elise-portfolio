@@ -333,6 +333,33 @@ p {
   min-height: 100%;
 }
 
+.video-gallery-header {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.creative-video-grid {
+  align-items: start;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+.creative-video-item {
+  margin: 0;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+}
+
+.creative-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
 .work-with-me {
   border-top: 1px solid var(--line);
   padding-top: clamp(2.2rem, 4vw, 3.1rem);
