@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RevealObserver from "@/components/RevealObserver";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body>
+        <RevealObserver />
         <div className="site-shell">
           <header className="site-header">
             <div className="container header-inner">

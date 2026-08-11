@@ -25,6 +25,32 @@ export default async function HomePage() {
     "Digitale produktpass med Repass": "digitale-produktpass",
     Kolleksjonslansering: "kolleksjonslansering",
   };
+  const projectMetaByTitle: Record<string, {areas: string; imageUrl?: string}> = {
+    "Ages by HS": {
+      areas: "Brand building · Content · Operations",
+      imageUrl: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
+    },
+    Masteroppgave: {
+      areas: "Research · Strategy · Sustainable fashion",
+    },
+    "Fra start til skalering - den grønne veien til suksess": {
+      areas: "Research · Strategy · Sustainable fashion",
+    },
+    "Ringnes NoLo": {
+      areas: "Consumer insight · Strategy · NoLo",
+    },
+    "Fra stigmatisert substitutt til aktivt valg - Ringnes": {
+      areas: "Consumer insight · Strategy · NoLo",
+    },
+    "Digitale produktpass med Repass": {
+      areas: "Sustainability · Product traceability · Communication",
+      imageUrl: "/repass-qr-code.png",
+    },
+    Kolleksjonslansering: {
+      areas: "Event · Styling · Content production",
+      imageUrl: "/launch-1.jpg",
+    },
+  };
 
   return (
     <>
@@ -63,12 +89,12 @@ export default async function HomePage() {
 
       <section className="section reveal">
         <div className="video-gallery-header">
-          <p className="eyebrow">Kreativt arbeid</p>
-          <h2>Innhold og video for Ages</h2>
+          <p className="eyebrow">KREATIVT ARBEID</p>
+          <h2>Innhold, konsept &amp; video.</h2>
         </div>
 
-        <div className="grid cards-3 creative-video-grid">
-          <figure className="creative-video-item">
+        <div className="creative-video-layout">
+          <figure className="creative-video-item creative-video-feature">
             <video
               className="creative-video"
               playsInline
@@ -82,7 +108,7 @@ export default async function HomePage() {
             </video>
           </figure>
 
-          <figure className="creative-video-item">
+          <figure className="creative-video-item creative-video-side-a">
             <video
               className="creative-video"
               playsInline
@@ -96,7 +122,7 @@ export default async function HomePage() {
             </video>
           </figure>
 
-          <figure className="creative-video-item">
+          <figure className="creative-video-item creative-video-side-b">
             <video
               className="creative-video"
               playsInline
@@ -110,6 +136,19 @@ export default async function HomePage() {
             </video>
           </figure>
         </div>
+
+        <p className="creative-video-footnote">
+          Creative direction · Styling · Content · Editing
+        </p>
+      </section>
+
+      <section className="section section-marquee reveal" aria-label="Fagområder">
+        <div className="marquee-wrap">
+          <div className="marquee-track">
+            <p>MARKETING — BRAND — CONTENT — CUSTOMER EXPERIENCE — FASHION — STRATEGY — CREATIVE —</p>
+            <p aria-hidden="true">MARKETING — BRAND — CONTENT — CUSTOMER EXPERIENCE — FASHION — STRATEGY — CREATIVE —</p>
+          </div>
+        </div>
       </section>
 
       <section className="section editorial-section reveal">
@@ -120,47 +159,54 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div className="grid cards-3" style={{marginTop: "1.75rem"}}>
-          {featuredProjects.map((project) => (
-            <article key={project.title} className="card project-story-card">
-              <p className="eyebrow">Case</p>
-              <h3>{project.title}</h3>
-              <p className="muted">{project.description}</p>
-              <div className="button-row" style={{marginTop: "1rem"}}>
-                <Link
-                  href={
-                    project.slug
-                      ? `/projects/${project.slug}`
-                      : featuredSlugByTitle[project.title]
-                        ? `/projects/${featuredSlugByTitle[project.title]}`
-                        : "/projects"
-                  }
-                  className="btn btn-secondary"
-                >
-                  Les case
-                </Link>
-              </div>
-            </article>
-          ))}
+        <div className="project-editorial-list">
+          {featuredProjects.map((project, index) => {
+            const href =
+              project.slug
+                ? `/projects/${project.slug}`
+                : featuredSlugByTitle[project.title]
+                  ? `/projects/${featuredSlugByTitle[project.title]}`
+                  : "/projects";
+            const projectMeta = projectMetaByTitle[project.title];
+            const number = String(index + 1).padStart(2, "0");
+
+            return (
+              <article
+                key={project.title}
+                className={`project-editorial-item reveal${projectMeta?.imageUrl ? " has-preview" : ""}`}
+              >
+                <div className="project-editorial-main">
+                  <h3 className="project-editorial-title">{number} — {project.title}</h3>
+                  <p className="project-editorial-areas">{projectMeta?.areas ?? project.description}</p>
+                  <Link href={href} className="project-editorial-link">
+                    Se prosjekt →
+                  </Link>
+                </div>
+                {projectMeta?.imageUrl ? (
+                  <div className="project-editorial-preview" aria-hidden="true">
+                    <img src={projectMeta.imageUrl} alt="" loading="lazy" />
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      <section className="section reveal work-with-me home-closing">
-        <div className="closing-panel">
-          <p className="eyebrow">Om meg</p>
-          <h2>Jeg er nysgjerrig, lærevillig og liker å gjøre ideer om til noe som fungerer i praksis.</h2>
-          <p className="lead">
-            Jeg lærer raskt, spør mye, og trives best når jeg får jobbe tett
-            på både mennesker og oppgaver.
-          </p>
-          <div className="button-row">
-            <Link href="/about" className="btn">
-              Les mer
-            </Link>
-            <Link href="/contact" className="btn btn-secondary">
-              Kontakt
-            </Link>
-          </div>
+      <section className="section reveal work-with-me home-closing home-closing-editorial">
+        <p className="eyebrow">Om meg</p>
+        <h2 className="home-closing-title">Jeg er nysgjerrig, lærevillig og liker å gjøre ideer om til noe som fungerer i praksis.</h2>
+        <p className="lead">
+          Jeg lærer raskt, spør mye, og trives best når jeg får jobbe tett
+          på både mennesker og oppgaver.
+        </p>
+        <div className="button-row">
+          <Link href="/about" className="btn">
+            Les mer
+          </Link>
+          <Link href="/contact" className="btn btn-secondary">
+            Kontakt
+          </Link>
         </div>
       </section>
     </>
