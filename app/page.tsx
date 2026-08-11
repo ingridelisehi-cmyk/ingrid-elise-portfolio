@@ -67,7 +67,7 @@ export default async function HomePage() {
           <h2>Innhold og video for Ages</h2>
         </div>
 
-        <div className="grid cards-2 creative-video-grid">
+        <div className="grid cards-3 creative-video-grid">
           <figure className="creative-video-item">
             <video
               className="creative-video"
@@ -93,6 +93,20 @@ export default async function HomePage() {
               preload="metadata"
             >
               <source src="/videos/Ages_campain_Reel_2_mp4.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/Grand_Hotel_Runway_video.mp4" type="video/mp4" />
             </video>
           </figure>
         </div>
