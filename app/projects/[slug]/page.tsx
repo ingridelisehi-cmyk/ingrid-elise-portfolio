@@ -29,6 +29,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
   const project = parseProjectDetail(rawData) ?? fallbackProjectDetails[slug as keyof typeof fallbackProjectDetails] ?? null;
   const isMasterThesis = slug === "fra-start-til-skalering";
   const isDigitalPassport = slug === "digitale-produktpass";
+  const isAgesByHs = slug === "ages-by-hs";
 
   if (!project) {
     notFound();
@@ -65,7 +66,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
             <Image
               key={imageUrl}
               src={imageUrl}
-              alt={`Bilde fra ${projectDetail.title}`}
+              alt={"Bilde fra " + projectDetail.title}
               className={isDigitalPassport ? "project-detail-image project-detail-image-hero" : "project-detail-image"}
               width={isDigitalPassport ? 1600 : 1200}
               height={isDigitalPassport ? 900 : 1500}
@@ -75,6 +76,26 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </section>
       ) : null}
 
+      {isAgesByHs ? (
+        <section className="section press-feature reveal">
+          <div className="card press-feature-card">
+            <p className="eyebrow">Omtalt i presse</p>
+            <h2>Kjenner du til det norske klesmerket AGES by HS?</h2>
+            <p className="press-source">Melk &amp; Honning</p>
+            <p className="press-copy">
+              AGES by HS fikk redaksjonell omtale i Melk &amp; Honning, der Ingrid og medgründer Filippa Sekkelsten ble intervjuet om merkevaren, designfilosofien og bærekraftsarbeidet.
+            </p>
+            <a
+              href="https://melkoghonning.no/kjenner-du-til-det-norske-klesmerket-ages-by-hs"
+              target="_blank"
+              rel="noreferrer"
+              className="press-link"
+            >
+              Les artikkelen ↗
+            </a>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section project-detail-grid">
         <div className="card">
