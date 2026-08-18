@@ -118,7 +118,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source src="/Grand_Hotel_Runway_Final.mp4" type="video/mp4" />
+              <source src="/Grand hotel .mp4" type="video/mp4" />
             </video>
           </figure>
 
