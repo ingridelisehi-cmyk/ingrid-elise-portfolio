@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       ) : null}
 
       {isAgesByHs ? (
-        <section className="section press-feature reveal">
+        <section className="section press-feature">
           <div className="card press-feature-card">
             <p className="eyebrow">Omtalt i presse</p>
             <h2>Kjenner du til det norske klesmerket AGES by HS?</h2>
@@ -123,7 +123,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       ) : null}
 
       {isAgesByHs ? (
-        <section className="section press-feature reveal">
+        <section className="section press-feature">
           <div className="card press-feature-card">
             <p className="eyebrow">Oslo Runway</p>
             <h2>Oslo Runway 2024</h2>
@@ -144,7 +144,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       ) : null}
 
       {isAgesByHs ? (
-        <section className="section press-feature reveal">
+        <section className="section press-feature">
           <div className="card press-feature-card">
             <p className="eyebrow">Organisk synlighet</p>
             <p className="press-copy">
@@ -159,7 +159,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       ) : null}
 
       {isKolleksjonslansering ? (
-        <section className="section press-feature reveal">
+        <section className="section press-feature">
           <div className="card press-feature-card">
             <p className="eyebrow">Min rolle</p>
             <p className="press-copy">
