@@ -27,7 +27,7 @@ export default async function HomePage() {
   };
   const projectMetaByTitle: Record<string, {areas: string; imageUrl?: string}> = {
     "Ages by HS": {
-      areas: "Brand building · Content · Operations",
+      areas: "Brand building · Content · Coordination · Operations",
       imageUrl: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
     },
     Masteroppgave: {
@@ -47,10 +47,35 @@ export default async function HomePage() {
       imageUrl: "/repass-qr-code.png",
     },
     Kolleksjonslansering: {
-      areas: "Event · Styling · Content production",
+      areas: "Launch coordination · Event · Visual direction · Content production",
       imageUrl: "/launch-1.jpg",
     },
   };
+
+  const preferredSlugOrder = [
+    "ages-by-hs",
+    "kolleksjonslansering",
+    "fra-start-til-skalering",
+    "digitale-produktpass",
+    "ringnes-nolo",
+  ];
+  const preferredIndexBySlug = new Map(
+    preferredSlugOrder.map((slug, index) => [slug, index]),
+  );
+  const orderedFeaturedProjects = [...featuredProjects].sort((a, b) => {
+    const aSlug = a.slug ?? featuredSlugByTitle[a.title];
+    const bSlug = b.slug ?? featuredSlugByTitle[b.title];
+    const aIndex = aSlug
+      ? (preferredIndexBySlug.get(aSlug) ?? Number.MAX_SAFE_INTEGER)
+      : Number.MAX_SAFE_INTEGER;
+    const bIndex = bSlug
+      ? (preferredIndexBySlug.get(bSlug) ?? Number.MAX_SAFE_INTEGER)
+      : Number.MAX_SAFE_INTEGER;
+    if (aIndex !== bIndex) {
+      return aIndex - bIndex;
+    }
+    return a.title.localeCompare(b.title, "nb");
+  });
 
   return (
     <>
@@ -62,8 +87,9 @@ export default async function HomePage() {
               Jeg liker å forstå hvorfor noe fungerer – og gjøre mer av det.
             </h1>
             <p className="lead story-lead home-story-lead">
-              Jeg kombinerer markedsføring, design og kundeinnsikt – fra idé
-              og innhold til gjennomføring og kundereise.
+              Jeg kombinerer markedsføring, innhold, merkevare og koordinering
+              – fra strategi og idé til visuell gjennomføring, publisering og
+              kundeopplevelse.
             </p>
             <div className="button-row home-cta-row">
               <Link href="/projects" className="btn">
@@ -81,7 +107,7 @@ export default async function HomePage() {
           <aside className="hero-note editorial-aside">
             <p className="eyebrow">Kort fortalt</p>
             <p className="editorial-quote">
-              Markedsføring · innhold · design · kundeopplevelse
+              Markedsføring · innhold · merkevare · koordinering
             </p>
           </aside>
         </div>
@@ -90,7 +116,7 @@ export default async function HomePage() {
       <section className="section reveal">
         <div className="video-gallery-header">
           <p className="eyebrow">KREATIVT ARBEID</p>
-          <h2>Innhold, konsept &amp; video.</h2>
+          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
         </div>
 
         <div className="creative-video-layout">
@@ -160,7 +186,7 @@ export default async function HomePage() {
         </div>
 
         <div className="project-editorial-list">
-          {featuredProjects.map((project, index) => {
+          {orderedFeaturedProjects.map((project, index) => {
             const href =
               project.slug
                 ? `/projects/${project.slug}`
@@ -197,8 +223,10 @@ export default async function HomePage() {
         <p className="eyebrow">Om meg</p>
         <h2 className="home-closing-title">Jeg er nysgjerrig, lærevillig og liker å gjøre ideer om til noe som fungerer i praksis.</h2>
         <p className="lead">
-          Jeg lærer raskt, spør mye, og trives best når jeg får jobbe tett
-          på både mennesker og oppgaver.
+          Jeg trives i skjæringspunktet mellom kreativitet og struktur, og
+          liker å jobbe med mennesker, innhold, merkevare og koordinering. Jeg
+          lærer raskt, tar initiativ og liker å få mange detaljer til å henge
+          sammen.
         </p>
         <div className="button-row">
           <Link href="/about" className="btn">

@@ -33,6 +33,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
   const isMasterThesis = slug === "fra-start-til-skalering";
   const isDigitalPassport = slug === "digitale-produktpass";
   const isAgesByHs = slug === "ages-by-hs";
+  const isKolleksjonslansering = slug === "kolleksjonslansering";
 
   if (!project) {
     notFound();
@@ -138,6 +139,43 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
             >
               Les om Oslo Runway hos ELLE ↗
             </a>
+          </div>
+        </section>
+      ) : null}
+
+      {isAgesByHs ? (
+        <section className="section press-feature reveal">
+          <div className="card press-feature-card">
+            <p className="eyebrow">Organisk synlighet</p>
+            <p className="press-copy">
+              Gjennom networking og samarbeid bygget vi organisk synlighet for
+              Ages by HS, blant annet gjennom profiler som brukte plaggene
+              våre, redaksjonell omtale i Melk &amp; Honning og eksponering
+              gjennom Serena sitt show under Oslo Runway, som ble dekket av
+              ELLE.
+            </p>
+          </div>
+        </section>
+      ) : null}
+
+      {isKolleksjonslansering ? (
+        <section className="section press-feature reveal">
+          <div className="card press-feature-card">
+            <p className="eyebrow">Min rolle</p>
+            <p className="press-copy">
+              Sammen med min co-founder koordinerte jeg lanseringen fra
+              produktleveranse til publisering. Arbeidet inkluderte oppfølging
+              av produsenter og leveranser, planlegging av lokale og
+              lansering, koordinering av fotografer og modeller, visuell
+              retning og styling, utvalg og redigering av bilder og video,
+              samt publisering på nettside og sosiale medier. Oppgaver og
+              deadlines ble fulgt opp i Trello, og planer ble justert underveis
+              når uforutsette utfordringer oppsto.
+            </p>
+            <p className="muted">
+              Launch coordination · Stakeholder coordination · Visual direction
+              · Content production · Digital publishing · Trello
+            </p>
           </div>
         </section>
       ) : null}
