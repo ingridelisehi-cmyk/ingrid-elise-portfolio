@@ -397,8 +397,8 @@ export default async function HomePage() {
         <div className="selected-work-grid">
           {selectedWorkItems.map((item) => (
             <article key={item.key} className={`selected-work-card ${item.className}`}>
-              <Link href={item.href} className="selected-work-media-link" aria-label={`Se prosjekt: ${item.title}`}>
-                {item.mediaType === "video" ? (
+              {item.mediaType === "video" ? (
+                <div className="selected-work-media-link" role="group" aria-label={item.title}>
                   <video
                     className="selected-work-media"
                     playsInline
@@ -410,7 +410,9 @@ export default async function HomePage() {
                   >
                     <source src={item.src} type="video/mp4" />
                   </video>
-                ) : (
+                </div>
+              ) : (
+                <Link href={item.href} className="selected-work-media-link" aria-label={`Se prosjekt: ${item.title}`}>
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -419,8 +421,8 @@ export default async function HomePage() {
                     className="selected-work-media"
                     sizes="(max-width: 900px) 100vw, 40vw"
                   />
-                )}
-              </Link>
+                </Link>
+              )}
               <div className="selected-work-body">
                 <p className="selected-work-category">{item.category}</p>
                 <h4 className="selected-work-title editorial-display">{item.title}</h4>
