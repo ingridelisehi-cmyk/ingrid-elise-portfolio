@@ -1,10 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
 import {parseHomepageData} from "@/sanity/lib/validation";
 
 export default async function HomePage() {
+  type EditorialGalleryImage = {
+    key: string;
+    src: string;
+    alt: string;
+    className: string;
+    width: number;
+    height: number;
+    sizes: string;
+    label?: string;
+  };
+
   const rawData = await client.fetch<unknown>(homepageQuery);
   const data = parseHomepageData(rawData);
 
@@ -62,6 +74,113 @@ export default async function HomePage() {
   const preferredIndexBySlug = new Map(
     preferredSlugOrder.map((slug, index) => [slug, index]),
   );
+  const editorialGalleryImages: EditorialGalleryImage[] = [
+    {
+      key: "launch-overview",
+      src: "/gallery/ages-launch-overview.png",
+      alt: "Guests attending an Ages by HS launch event",
+      className: "gallery-hero",
+      width: 1937,
+      height: 1292,
+      sizes: "(max-width: 900px) 100vw, 92vw",
+      label: "Launch",
+    },
+    {
+      key: "group-staircase",
+      src: "/gallery/ages-group-staircase.jpg",
+      alt: "Models wearing Ages by HS tailoring on a staircase",
+      className: "gallery-left-large",
+      width: 1200,
+      height: 1600,
+      sizes: "(max-width: 900px) 100vw, 58vw",
+      label: "Visual direction",
+    },
+    {
+      key: "product-detail",
+      src: "/gallery/ages-product-detail.png",
+      alt: "Ages by HS branded product detail at a launch event",
+      className: "gallery-right-detail",
+      width: 1200,
+      height: 900,
+      sizes: "(max-width: 900px) 100vw, 30vw",
+    },
+    {
+      key: "event-atmosphere",
+      src: "/gallery/ages-event-atmosphere.png",
+      alt: "People gathered at an Ages by HS event",
+      className: "gallery-left-atmosphere",
+      width: 1600,
+      height: 1100,
+      sizes: "(max-width: 900px) 100vw, 50vw",
+      label: "Event",
+    },
+    {
+      key: "editorial-portrait",
+      src: "/gallery/ages-editorial-portrait.jpg",
+      alt: "Editorial portrait from Ages by HS campaign content",
+      className: "gallery-right-portrait",
+      width: 1200,
+      height: 1600,
+      sizes: "(max-width: 900px) 100vw, 42vw",
+    },
+    {
+      key: "staircase-overhead",
+      src: "/gallery/ages-staircase-overhead.jpg",
+      alt: "Overhead view of styling and atmosphere at an Ages by HS launch",
+      className: "gallery-wide-overhead",
+      width: 1800,
+      height: 1100,
+      sizes: "(max-width: 900px) 100vw, 88vw",
+      label: "Brand experience",
+    },
+    {
+      key: "garment-display",
+      src: "/gallery/ages-garment-display.png",
+      alt: "Ages by HS garments displayed during a launch event",
+      className: "gallery-left-display",
+      width: 1200,
+      height: 1500,
+      sizes: "(max-width: 900px) 100vw, 48vw",
+    },
+    {
+      key: "brand-tag",
+      src: "/gallery/ages-brand-tag.jpg",
+      alt: "Close-up of an Ages by HS branded clothing tag",
+      className: "gallery-right-brand",
+      width: 1100,
+      height: 1450,
+      sizes: "(max-width: 900px) 100vw, 38vw",
+      label: "Styling",
+    },
+    {
+      key: "group-campaign",
+      src: "/gallery/ages-group-campaign.jpg",
+      alt: "Group campaign image from Ages by HS launch",
+      className: "gallery-campaign-large",
+      width: 1700,
+      height: 1200,
+      sizes: "(max-width: 900px) 100vw, 82vw",
+      label: "Content",
+    },
+    {
+      key: "event-branding",
+      src: "/gallery/ages-event-branding.jpg",
+      alt: "Ages by HS logo displayed during an event presentation",
+      className: "gallery-closing-wide",
+      width: 1900,
+      height: 1150,
+      sizes: "(max-width: 900px) 100vw, 78vw",
+    },
+    {
+      key: "clothing-rack",
+      src: "/gallery/ages-clothing-rack.jpg",
+      alt: "Curated clothing rack with Ages by HS pieces",
+      className: "gallery-closing-detail",
+      width: 1200,
+      height: 900,
+      sizes: "(max-width: 900px) 100vw, 24vw",
+    },
+  ];
   const orderedFeaturedProjects = [...featuredProjects].sort((a, b) => {
     const aSlug = a.slug ?? featuredSlugByTitle[a.title];
     const bSlug = b.slug ?? featuredSlugByTitle[b.title];
@@ -166,6 +285,36 @@ export default async function HomePage() {
         <p className="creative-video-footnote">
           Creative direction · Styling · Content · Editing
         </p>
+      </section>
+
+      <section className="section editorial-gallery-section reveal" aria-labelledby="visualt-arbeid-heading">
+        <p className="eyebrow">VISUELT ARBEID</p>
+        <div className="editorial-gallery-intro">
+          <h2 id="visualt-arbeid-heading">Utvalgte øyeblikk, innhold &amp; merkevarearbeid.</h2>
+          <p className="muted editorial-gallery-support">
+            Et visuelt utvalg fra arbeid med Ages by HS – fra kampanjeinnhold
+            og styling til lanseringer, events og merkevarebygging.
+          </p>
+        </div>
+
+        <div className="editorial-gallery-grid">
+          {editorialGalleryImages.map((image, index) => (
+            <figure key={image.key} className={`editorial-gallery-item ${image.className}`}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                sizes={image.sizes}
+                className="editorial-gallery-image"
+                priority={index === 0}
+              />
+              {image.label ? (
+                <figcaption className="editorial-gallery-label">{image.label}</figcaption>
+              ) : null}
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="section section-marquee reveal" aria-label="Fagområder">
