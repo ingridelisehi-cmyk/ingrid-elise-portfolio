@@ -167,7 +167,7 @@ export default async function HomePage() {
     kolleksjonslansering: "Fra kolleksjon til lansering med tydelig vertskap, produksjon og gjennomføring.",
     "fra-start-til-skalering": "Forskningsbasert innsikt om hvordan bærekraftige motemerker kan vokse strategisk.",
   };
-  const projectMediaBySlug: Record<string, {type: "image" | "video"; src: string; alt: string; objectPosition?: string}> = {
+  const projectMediaBySlug: Record<string, {type: "image" | "video"; src: string; alt: string}> = {
     "ages-by-hs": {
       type: "image",
       src: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
@@ -177,12 +177,6 @@ export default async function HomePage() {
       type: "image",
       src: "/launch-1.jpg",
       alt: "Bilde fra kolleksjonslansering",
-    },
-    "fra-start-til-skalering": {
-      type: "image",
-      src: "/masteroppgave-forside.png",
-      alt: "Forside til masteroppgaven Fra start til skalering",
-      objectPosition: "50% 15%",
     },
   };
   const showcaseSlugs = ["ages-by-hs", "kolleksjonslansering", "fra-start-til-skalering"];
@@ -500,7 +494,6 @@ export default async function HomePage() {
                         height={900}
                         className="project-showcase-media"
                         sizes="(max-width: 900px) 100vw, 48vw"
-                        style={media.objectPosition ? {objectPosition: media.objectPosition} : undefined}
                       />
                     )}
                   </div>
