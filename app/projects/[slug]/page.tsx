@@ -51,7 +51,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
   };
 
   return (
-    <article>
+    <article className="project-detail-page">
       <header className={isMasterThesis ? "thesis-header" : undefined}>
         <p className="eyebrow">{projectDetail.category ?? "Prosjekt"}</p>
         <h1>{projectDetail.title}</h1>

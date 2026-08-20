@@ -817,10 +817,16 @@ p {
 }
 
 .project-detail-image {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border: 1px solid var(--line);
+}
+
+.project-detail-page .project-detail-image-section + .section,
+.project-detail-page .section.grid.cards-2 + .section {
+  margin-top: clamp(1.4rem, 3.2vw, 2.6rem);
 }
 
 .project-detail-image-section {
