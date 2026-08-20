@@ -39,27 +39,27 @@ export default async function HomePage() {
   };
   const projectMetaByTitle: Record<string, {areas: string; imageUrl?: string}> = {
     "Ages by HS": {
-      areas: "Brand building, Content, Coordination, Operations",
+      areas: "Merkevarebygging, Innhold, Koordinering, Drift",
       imageUrl: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
     },
     Masteroppgave: {
-      areas: "Research · Strategy · Sustainable fashion",
+      areas: "Analyse · Strategi · Bærekraftig mote",
     },
     "Fra start til skalering - den grønne veien til suksess": {
-      areas: "Research · Strategy · Sustainable fashion",
+      areas: "Analyse · Strategi · Bærekraftig mote",
     },
     "Ringnes NoLo": {
-      areas: "Consumer insight · Strategy · NoLo",
+      areas: "Forbrukerinnsikt · Strategi · Alkoholfritt",
     },
     "Fra stigmatisert substitutt til aktivt valg - Ringnes": {
-      areas: "Consumer insight · Strategy · NoLo",
+      areas: "Forbrukerinnsikt · Strategi · Alkoholfritt",
     },
     "Digitale produktpass med Repass": {
-      areas: "Sustainability · Product traceability · Communication",
+      areas: "Bærekraft · Produktsporbarhet · Kommunikasjon",
       imageUrl: "/repass-qr-code.png",
     },
     Kolleksjonslansering: {
-      areas: "Launch coordination, Event, Visual direction, Content production",
+      areas: "Lanseringskoordinering, Arrangement, Visuell retning, Innholdsproduksjon",
       imageUrl: "/launch-1.jpg",
     },
   };
@@ -320,8 +320,8 @@ export default async function HomePage() {
       <section className="section section-marquee reveal" aria-label="Fagområder">
         <div className="marquee-wrap">
           <div className="marquee-track">
-            <p>MARKETING, BRAND, CONTENT, CUSTOMER EXPERIENCE, FASHION, STRATEGY, CREATIVE</p>
-            <p aria-hidden="true">MARKETING, BRAND, CONTENT, CUSTOMER EXPERIENCE, FASHION, STRATEGY, CREATIVE</p>
+            <p>MARKEDSFORING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
+            <p aria-hidden="true">MARKEDSFORING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
           </div>
         </div>
       </section>
