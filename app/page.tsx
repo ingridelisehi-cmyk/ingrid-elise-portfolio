@@ -78,7 +78,7 @@ export default async function HomePage() {
     {
       key: "launch-overview",
       src: "/gallery/ages-launch-overview.png",
-      alt: "Gjester under et Ages by HS lanseringsevent",
+      alt: "Gjester under et Ages by HS lanseringsarrangement",
       className: "gallery-hero",
       width: 1937,
       height: 1292,
@@ -126,7 +126,7 @@ export default async function HomePage() {
     {
       key: "staircase-overhead",
       src: "/gallery/ages-staircase-overhead.jpg",
-      alt: "Overblikk av styling og stemning under en Ages by HS lansering",
+      alt: "Overblikk av stiluttrykk og stemning under en Ages by HS lansering",
       className: "gallery-wide-overhead",
       width: 1800,
       height: 1100,
@@ -283,7 +283,7 @@ export default async function HomePage() {
         </div>
 
         <p className="creative-video-footnote">
-          Kreativ retning · Styling · Innhold · Redigering
+          Kreativ retning · Stiluttrykk · Innhold · Redigering
         </p>
       </section>
 
@@ -293,7 +293,7 @@ export default async function HomePage() {
           <h2 id="visualt-arbeid-heading">Utvalgte øyeblikk, innhold &amp; merkevarearbeid.</h2>
           <p className="muted editorial-gallery-support">
             Et visuelt utvalg fra arbeid med Ages by HS – fra kampanjeinnhold
-            og styling til lanseringer, arrangementer og merkevarebygging.
+            og stiluttrykk til lanseringer, arrangementer og merkevarebygging.
           </p>
         </div>
 
