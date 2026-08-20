@@ -170,7 +170,7 @@ export default async function HomePage() {
       mediaType: "video",
       src: "/videos/ages-amalie-reel.mp4",
       alt: "Vertical reel for Ages by HS",
-      className: "selected-work-tall",
+      className: "selected-work-large",
       width: 1080,
       height: 1920,
     },
