@@ -209,16 +209,6 @@ export default async function HomePage() {
       sizes: "(max-width: 900px) 100vw, 30vw",
     },
     {
-      key: "event-atmosphere",
-      src: "/gallery/ages-event-atmosphere.png",
-      alt: "Mennesker samlet under lanseringen til Ages by HS",
-      className: "gallery-left-atmosphere",
-      width: 1600,
-      height: 1100,
-      sizes: "(max-width: 900px) 100vw, 50vw",
-      label: "Lansering",
-    },
-    {
       key: "editorial-portrait",
       src: "/gallery/ages-editorial-portrait.jpg",
       alt: "Redaksjonelt portrett fra kampanjeinnhold for Ages by HS",
