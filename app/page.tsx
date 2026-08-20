@@ -178,6 +178,11 @@ export default async function HomePage() {
       src: "/launch-1.jpg",
       alt: "Bilde fra kolleksjonslansering",
     },
+    "fra-start-til-skalering": {
+      type: "image",
+      src: "/repass-landing.png",
+      alt: "Visuell for strategisk og bærekraftsrelatert prosjektarbeid",
+    },
   };
   const showcaseSlugs = ["ages-by-hs", "kolleksjonslansering", "fra-start-til-skalering"];
   const projectShowcase = showcaseSlugs
