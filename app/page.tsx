@@ -98,13 +98,13 @@ export default async function HomePage() {
   const selectedWorkItems: SelectedWorkItem[] = [
     {
       key: "launch-event-film",
-      category: "EVENT / GRAND HOTEL",
-      title: "Event på Grand Hotel",
-      description: "Tilstedeværelse · innhold · stemning · dokumentasjon",
+      category: "LANSERING / ARRANGEMENT",
+      title: "From collection to launch",
+      description: "Planlegging · koordinering · visuell retning · innholdsproduksjon",
       href: "/projects/kolleksjonslansering",
       mediaType: "video",
       src: "/Grand hotel .mp4",
-      alt: "Video fra event på Grand Hotel",
+      alt: "Lanseringsvideo fra arrangement",
       className: "selected-work-large",
       width: 1280,
       height: 960,
