@@ -826,7 +826,7 @@ p {
 
 .project-detail-page .project-detail-image-section + .section,
 .project-detail-page .section.grid.cards-2 + .section {
-  margin-top: clamp(1.4rem, 3.2vw, 2.6rem);
+  margin-top: clamp(0.8rem, 2.6vw, 2rem);
 }
 
 .project-detail-page .reveal,
