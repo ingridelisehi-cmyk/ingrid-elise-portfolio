@@ -207,7 +207,7 @@ export default async function HomePage() {
             </h1>
             <p className="lead story-lead home-story-lead">
               Jeg kombinerer markedsføring, innhold, merkevare og koordinering
-              , fra strategi og idé til visuell gjennomføring, publisering og
+              fra strategi og idé til visuell gjennomføring, publisering og
               kundeopplevelse.
             </p>
             <div className="button-row home-cta-row">
