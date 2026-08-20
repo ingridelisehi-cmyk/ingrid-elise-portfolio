@@ -16,19 +16,6 @@ export default async function HomePage() {
     sizes: string;
     label?: string;
   };
-  type SelectedWorkItem = {
-    key: string;
-    category: string;
-    title: string;
-    description: string;
-    href: string;
-    mediaType: "image" | "video";
-    src: string;
-    alt: string;
-    className: string;
-    width: number;
-    height: number;
-  };
 
   const rawData = await client.fetch<unknown>(homepageQuery);
   const data = parseHomepageData(rawData);
@@ -87,107 +74,6 @@ export default async function HomePage() {
   const preferredIndexBySlug = new Map(
     preferredSlugOrder.map((slug, index) => [slug, index]),
   );
-  const featuredBySlug = new Map(
-    featuredProjects
-      .map((project) => {
-        const slug = project.slug ?? featuredSlugByTitle[project.title];
-        return slug ? [slug, project] : null;
-      })
-      .filter((entry): entry is [string, (typeof featuredProjects)[number]] => Boolean(entry)),
-  );
-  const selectedWorkItems: SelectedWorkItem[] = [
-    {
-      key: "launch-event-film",
-      category: "LANSERING / ARRANGEMENT",
-      title: "From collection to launch",
-      description: "Planlegging · koordinering · visuell retning · innholdsproduksjon",
-      href: "/projects/kolleksjonslansering",
-      mediaType: "video",
-      src: "/Grand hotel .mp4",
-      alt: "Lanseringsvideo fra arrangement",
-      className: "selected-work-large",
-      width: 1280,
-      height: 960,
-    },
-    {
-      key: "campaign-brand-content",
-      category: "KAMPANJE / VISUELL RETNING",
-      title: "Campaign & brand content",
-      description: "Konsept · styling · produksjon · redigering",
-      href: "/projects/ages-by-hs",
-      mediaType: "video",
-      src: "/videos/Ages_campain_Reel_2_mp4.mp4",
-      alt: "Kampanjeinnhold for Ages by HS",
-      className: "selected-work-tall",
-      width: 1080,
-      height: 1920,
-    },
-    {
-      key: "creative-direction",
-      category: "KREATIV RETNING",
-      title: "Editorial styling & visual mood",
-      description: "Kreativ retning · styling · merkevaretone",
-      href: "/projects/ages-by-hs",
-      mediaType: "image",
-      src: "/gallery/ages-editorial-portrait.jpg",
-      alt: "Editorial portrett fra Ages by HS",
-      className: "selected-work-medium",
-      width: 1200,
-      height: 1600,
-    },
-    {
-      key: "brand-experience",
-      category: "BRAND EXPERIENCE",
-      title: "Detailing that builds identity",
-      description: "Detaljarbeid · produktpresentasjon · visuell konsistens",
-      href: "/projects/ages-by-hs",
-      mediaType: "image",
-      src: "/gallery/ages-product-detail.png",
-      alt: "Detaljbilde av produkt og branding",
-      className: "selected-work-small",
-      width: 1200,
-      height: 900,
-    },
-    {
-      key: "event-atmosphere",
-      category: "EVENT / ATMOSFÆRE",
-      title: "Social moments with brand coherence",
-      description: "Opplevelsesdesign · koordinering · innhold i kontekst",
-      href: "/projects/kolleksjonslansering",
-      mediaType: "image",
-      src: "/gallery/ages-event-atmosphere.png",
-      alt: "Atmosfære fra arrangement",
-      className: "selected-work-wide",
-      width: 1600,
-      height: 1100,
-    },
-  ];
-  const projectStatementBySlug: Record<string, string> = {
-    "ages-by-hs": "Fra idé til merkevareopplevelse gjennom innhold, drift og koordinering.",
-    kolleksjonslansering: "Fra kolleksjon til lansering med tydelig vertskap, produksjon og gjennomføring.",
-    "fra-start-til-skalering": "Forskningsbasert innsikt om hvordan bærekraftige motemerker kan vokse strategisk.",
-  };
-  const projectMediaBySlug: Record<string, {type: "image" | "video"; src: string; alt: string}> = {
-    "ages-by-hs": {
-      type: "image",
-      src: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
-      alt: "Ages by HS på runway",
-    },
-    kolleksjonslansering: {
-      type: "image",
-      src: "/launch-1.jpg",
-      alt: "Bilde fra kolleksjonslansering",
-    },
-    "fra-start-til-skalering": {
-      type: "image",
-      src: "/repass-landing.png",
-      alt: "Visuell for strategisk og bærekraftsrelatert prosjektarbeid",
-    },
-  };
-  const showcaseSlugs = ["ages-by-hs", "kolleksjonslansering", "fra-start-til-skalering"];
-  const projectShowcase = showcaseSlugs
-    .map((slug) => featuredBySlug.get(slug))
-    .filter((project): project is NonNullable<typeof project> => Boolean(project));
   const editorialGalleryImages: EditorialGalleryImage[] = [
     {
       key: "launch-overview",
@@ -349,73 +235,56 @@ export default async function HomePage() {
       <section className="section reveal">
         <div className="video-gallery-header">
           <p className="eyebrow">KREATIVT ARBEID</p>
-          <h2 className="editorial-display">Innhold, konsept &amp; visuell kommunikasjon.</h2>
+          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
         </div>
 
-        <article className="featured-editorial-block">
-          <Image
-            src="/gallery/ages-launch-overview.png"
-            alt="Ages by HS lanseringsøyeblikk"
-            width={1937}
-            height={1292}
-            className="featured-editorial-media"
-            sizes="(max-width: 900px) 100vw, 92vw"
-            priority
-          />
-          <div className="featured-editorial-overlay">
-            <p className="featured-editorial-category">FASHION / BRAND CONTENT</p>
-            <h3 className="featured-editorial-title editorial-display">
-              Ages by HS - fra ide til merkevareopplevelse
-            </h3>
-            <p className="featured-editorial-copy">
-              Kreativ retning · innhold · merkevare · lanseringer
-            </p>
-            <Link href="/projects/ages-by-hs" className="editorial-arrow-link">
-              Se prosjekt <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </article>
+        <div className="creative-video-layout">
+          <figure className="creative-video-item creative-video-feature">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
+            </video>
+          </figure>
 
-        <div className="selected-work-header">
-          <p className="eyebrow">SELECTED WORK</p>
-          <h3 className="editorial-display">Kuratert innhold fra prosjekter, kampanjer og lanseringer.</h3>
+          <figure className="creative-video-item creative-video-side-a">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/Grand hotel .mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-b">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/Ages_campain_Reel_2_mp4.mp4" type="video/mp4" />
+            </video>
+          </figure>
         </div>
 
-        <div className="selected-work-grid">
-          {selectedWorkItems.map((item) => (
-            <article key={item.key} className={`selected-work-card ${item.className}`}>
-              <Link href={item.href} className="selected-work-media-link" aria-label={`Se prosjekt: ${item.title}`}>
-                {item.mediaType === "video" ? (
-                  <video
-                    className="selected-work-media"
-                    playsInline
-                    muted
-                    autoPlay
-                    loop
-                    controls
-                    preload="metadata"
-                  >
-                    <source src={item.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    width={item.width}
-                    height={item.height}
-                    className="selected-work-media"
-                    sizes="(max-width: 900px) 100vw, 40vw"
-                  />
-                )}
-              </Link>
-              <div className="selected-work-body">
-                <p className="selected-work-category">{item.category}</p>
-                <h4 className="selected-work-title editorial-display">{item.title}</h4>
-                <p className="selected-work-description">{item.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <p className="creative-video-footnote">
+          Kreativ retning · Stiluttrykk · Innhold · Redigering
+        </p>
       </section>
 
       <section className="section editorial-gallery-section reveal" aria-labelledby="visualt-arbeid-heading">
@@ -461,64 +330,36 @@ export default async function HomePage() {
         <p className="eyebrow">Utvalgt arbeid</p>
         <div className="perspective-grid projects-intro-grid">
           <div>
-            <h2 className="editorial-display">Et utvalg prosjekter jeg har jobbet med.</h2>
+            <h2>Et utvalg prosjekter jeg har jobbet med.</h2>
           </div>
         </div>
 
-        <div className="project-showcase-list">
-          {projectShowcase.map((project, index) => {
+        <div className="project-editorial-list">
+          {orderedFeaturedProjects.map((project, index) => {
             const href =
               project.slug
                 ? `/projects/${project.slug}`
                 : featuredSlugByTitle[project.title]
                   ? `/projects/${featuredSlugByTitle[project.title]}`
                   : "/projects";
-            const projectSlug = project.slug ?? featuredSlugByTitle[project.title];
             const projectMeta = projectMetaByTitle[project.title];
             const number = String(index + 1).padStart(2, "0");
-            const media = projectSlug ? projectMediaBySlug[projectSlug] : null;
-            const statement = projectSlug
-              ? projectStatementBySlug[projectSlug] ?? project.description
-              : project.description;
 
             return (
               <article
                 key={project.title}
-                className={`project-showcase-item ${index % 2 === 1 ? "is-reversed" : ""}`}
+                className={`project-editorial-item reveal${projectMeta?.imageUrl ? " has-preview" : ""}`}
               >
-                <div className="project-showcase-content">
-                  <p className="project-showcase-number">Prosjekt {number}</p>
-                  <h3 className="project-showcase-title editorial-display">{project.title}</h3>
-                  <p className="project-showcase-areas">{projectMeta?.areas ?? project.description}</p>
-                  <p className="project-showcase-statement">{statement}</p>
-                  <Link href={href} className="editorial-arrow-link project-showcase-link">
-                    Se prosjekt <span aria-hidden="true">→</span>
+                <div className="project-editorial-main">
+                  <h3 className="project-editorial-title">{number}. {project.title}</h3>
+                  <p className="project-editorial-areas">{projectMeta?.areas ?? project.description}</p>
+                  <Link href={href} className="project-editorial-link">
+                    Se prosjekt →
                   </Link>
                 </div>
-                {media ? (
-                  <div className="project-showcase-media-wrap">
-                    {media.type === "video" ? (
-                      <video
-                        className="project-showcase-media"
-                        playsInline
-                        muted
-                        autoPlay
-                        loop
-                        controls
-                        preload="metadata"
-                      >
-                        <source src={media.src} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <Image
-                        src={media.src}
-                        alt={media.alt}
-                        width={1200}
-                        height={900}
-                        className="project-showcase-media"
-                        sizes="(max-width: 900px) 100vw, 48vw"
-                      />
-                    )}
+                {projectMeta?.imageUrl ? (
+                  <div className="project-editorial-preview" aria-hidden="true">
+                    <img src={projectMeta.imageUrl} alt="" loading="lazy" />
                   </div>
                 ) : null}
               </article>
