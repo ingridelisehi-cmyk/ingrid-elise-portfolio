@@ -283,7 +283,7 @@ export default async function HomePage() {
         </div>
 
         <p className="creative-video-footnote">
-          Creative direction · Styling · Content · Editing
+          Kreativ retning · Styling · Innhold · Redigering
         </p>
       </section>
 
@@ -293,7 +293,7 @@ export default async function HomePage() {
           <h2 id="visualt-arbeid-heading">Utvalgte øyeblikk, innhold &amp; merkevarearbeid.</h2>
           <p className="muted editorial-gallery-support">
             Et visuelt utvalg fra arbeid med Ages by HS – fra kampanjeinnhold
-            og styling til lanseringer, events og merkevarebygging.
+            og styling til lanseringer, arrangementer og merkevarebygging.
           </p>
         </div>
 
