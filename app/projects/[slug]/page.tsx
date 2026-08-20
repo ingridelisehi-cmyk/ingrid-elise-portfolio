@@ -199,7 +199,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
                   playsInline
                   preload="none"
                 >
-                  <source src="/AgesbyHS 4k.mov" type="video/quicktime" />
+                  <source src="/videos/ages-campaign-reel.mp4" type="video/mp4" />
                 </video>
               </figure>
               <p className="muted launch-content-meta">Video by Filippa Sekkelsten</p>
@@ -217,7 +217,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
                   playsInline
                   preload="none"
                 >
-                  <source src="/AGESbyHS PR1 v2 Long.mp4" type="video/mp4" />
+                  <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
                 </video>
               </figure>
               <p className="muted launch-content-meta">Video by @bikphotography</p>
