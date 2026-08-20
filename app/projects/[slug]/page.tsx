@@ -25,10 +25,7 @@ export async function generateStaticParams() {
 
 export default async function ProjectDetailPage({params}: ProjectPageProps) {
   const {slug} = await params;
-  const agesProjectImagesToHide = [
-    "HJ2A2488_1_a6857a4f-659d-46b6-9cae-3d7f63b54e09.jpg",
-    "HJ2A2505.jpg",
-  ];
+  const agesProjectImageToHide = "HJ2A2488_1_a6857a4f-659d-46b6-9cae-3d7f63b54e09.jpg";
   const rawData = await client.fetch<unknown>(projectBySlugQuery, {slug});
   const project =
     parseProjectDetail(rawData) ??
@@ -56,7 +53,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
 
   if (isAgesByHs && projectDetail.imageUrls?.length) {
     projectDetail.imageUrls = projectDetail.imageUrls.filter(
-      (imageUrl) => !agesProjectImagesToHide.some((fragment) => imageUrl.includes(fragment)),
+      (imageUrl) => !imageUrl.includes(agesProjectImageToHide),
     );
   }
 
