@@ -203,6 +203,16 @@ export default async function HomePage() {
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
   const editorialGalleryImages: EditorialGalleryImage[] = [
     {
+      key: "launch-overview",
+      src: "/gallery/ages-launch-overview.png",
+      alt: "Gjester under et Ages by HS lanseringsarrangement",
+      className: "gallery-hero",
+      width: 1937,
+      height: 1292,
+      sizes: "(max-width: 900px) 100vw, 92vw",
+      label: "Lansering",
+    },
+    {
       key: "group-staircase",
       src: "/gallery/ages-group-staircase.jpg",
       alt: "Modeller i Ages by HS antrekk i en trapp",
