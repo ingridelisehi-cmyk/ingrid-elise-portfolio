@@ -180,56 +180,6 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </section>
       ) : null}
 
-      {isKolleksjonslansering ? (
-        <section className="section launch-content-section reveal">
-          <p className="eyebrow">CAMPAIGN &amp; LAUNCH CONTENT</p>
-          <h2>Selected content from the launch.</h2>
-          <p className="muted launch-content-support">
-            Selected video content created around the Ages by HS launch. My
-            contribution included planning, coordination, visual direction,
-            styling and content selection.
-          </p>
-
-          <div className="launch-content-grid" role="list">
-            <article className="launch-content-item launch-content-landscape" role="listitem">
-              <figure>
-                <video
-                  className="launch-content-video"
-                  controls
-                  playsInline
-                  preload="none"
-                >
-                  <source src="/videos/ages-campaign-reel.mp4" type="video/mp4" />
-                </video>
-              </figure>
-              <p className="muted launch-content-meta">Video by Filippa Sekkelsten</p>
-              <p className="muted launch-content-meta">
-                My role: Launch coordination · visual direction · styling ·
-                content planning
-              </p>
-            </article>
-
-            <article className="launch-content-item launch-content-portrait" role="listitem">
-              <figure>
-                <video
-                  className="launch-content-video"
-                  controls
-                  playsInline
-                  preload="none"
-                >
-                  <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
-                </video>
-              </figure>
-              <p className="muted launch-content-meta">Video by @bikphotography</p>
-              <p className="muted launch-content-meta">
-                My role: Launch coordination · visual direction · styling ·
-                content planning
-              </p>
-            </article>
-          </div>
-        </section>
-      ) : null}
-
       <section className="section project-detail-grid">
         <div className="card">
           <p className="eyebrow">Utfordring</p>
