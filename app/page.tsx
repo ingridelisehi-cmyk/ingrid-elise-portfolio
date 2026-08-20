@@ -204,34 +204,6 @@ export default async function HomePage() {
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
   const editorialGalleryImages: EditorialGalleryImage[] = [
     {
-      key: "event-atmosphere",
-      src: "/gallery/ages-event-atmosphere.png",
-      alt: "Mennesker samlet under lanseringen til Ages by HS",
-      className: "gallery-left-atmosphere",
-      width: 1600,
-      height: 1100,
-      sizes: "(max-width: 900px) 100vw, 50vw",
-      label: "Lansering",
-    },
-    {
-      key: "product-detail",
-      src: "/gallery/ages-product-detail.png",
-      alt: "Produktdetalj med Ages by HS branding under lansering",
-      className: "gallery-right-detail",
-      width: 1200,
-      height: 900,
-      sizes: "(max-width: 900px) 100vw, 30vw",
-    },
-    {
-      key: "editorial-portrait",
-      src: "/gallery/ages-editorial-portrait.jpg",
-      alt: "Redaksjonelt portrett fra kampanjeinnhold for Ages by HS",
-      className: "gallery-right-portrait",
-      width: 1200,
-      height: 1600,
-      sizes: "(max-width: 900px) 100vw, 42vw",
-    },
-    {
       key: "staircase-overhead",
       src: "/gallery/ages-staircase-overhead.jpg",
       alt: "Overblikk av stiluttrykk og stemning under en Ages by HS lansering",
