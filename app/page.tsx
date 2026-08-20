@@ -27,7 +27,7 @@ export default async function HomePage() {
   };
   const projectMetaByTitle: Record<string, {areas: string; imageUrl?: string}> = {
     "Ages by HS": {
-      areas: "Brand building · Content · Coordination · Operations",
+      areas: "Brand building, Content, Coordination, Operations",
       imageUrl: "https://agesbyhs.com/cdn/shop/files/HJ2A2546_1.jpg?v=1729606579&width=1200",
     },
     Masteroppgave: {
@@ -47,7 +47,7 @@ export default async function HomePage() {
       imageUrl: "/repass-qr-code.png",
     },
     Kolleksjonslansering: {
-      areas: "Launch coordination · Event · Visual direction · Content production",
+      areas: "Launch coordination, Event, Visual direction, Content production",
       imageUrl: "/launch-1.jpg",
     },
   };
@@ -84,11 +84,11 @@ export default async function HomePage() {
         <div className="hero-layout editorial-hero-layout">
           <div>
             <h1 className="hero-title">
-              Jeg liker å forstå hvorfor noe fungerer – og gjøre mer av det.
+              Jeg liker å forstå hvorfor noe fungerer, og gjøre mer av det.
             </h1>
             <p className="lead story-lead home-story-lead">
               Jeg kombinerer markedsføring, innhold, merkevare og koordinering
-              – fra strategi og idé til visuell gjennomføring, publisering og
+              , fra strategi og idé til visuell gjennomføring, publisering og
               kundeopplevelse.
             </p>
             <div className="button-row home-cta-row">
@@ -171,8 +171,8 @@ export default async function HomePage() {
       <section className="section section-marquee reveal" aria-label="Fagområder">
         <div className="marquee-wrap">
           <div className="marquee-track">
-            <p>MARKETING — BRAND — CONTENT — CUSTOMER EXPERIENCE — FASHION — STRATEGY — CREATIVE —</p>
-            <p aria-hidden="true">MARKETING — BRAND — CONTENT — CUSTOMER EXPERIENCE — FASHION — STRATEGY — CREATIVE —</p>
+            <p>MARKETING, BRAND, CONTENT, CUSTOMER EXPERIENCE, FASHION, STRATEGY, CREATIVE</p>
+            <p aria-hidden="true">MARKETING, BRAND, CONTENT, CUSTOMER EXPERIENCE, FASHION, STRATEGY, CREATIVE</p>
           </div>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default async function HomePage() {
                 className={`project-editorial-item reveal${projectMeta?.imageUrl ? " has-preview" : ""}`}
               >
                 <div className="project-editorial-main">
-                  <h3 className="project-editorial-title">{number} — {project.title}</h3>
+                  <h3 className="project-editorial-title">{number}. {project.title}</h3>
                   <p className="project-editorial-areas">{projectMeta?.areas ?? project.description}</p>
                   <Link href={href} className="project-editorial-link">
                     Se prosjekt →

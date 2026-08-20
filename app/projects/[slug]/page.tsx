@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
             <h2>Oslo Runway 2024</h2>
             <p className="press-copy">
               Klærne våre ble brukt i visningen til veskemerket Serena under
-              Oslo Runway 2024 – et arrangement som ble dekket av ELLE.
+              Oslo Runway 2024, et arrangement som ble dekket av ELLE.
             </p>
             <a
               href="https://www.elle.no/oslo-runway-dette-er-hoydepunktene/861626"
@@ -163,7 +163,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
           <div className="card press-feature-card">
             <p className="eyebrow">Min rolle</p>
             <p className="press-copy">
-              Sammen med min co-founder koordinerte jeg lanseringen fra
+              Sammen med min medgründer koordinerte jeg lanseringen fra
               produktleveranse til publisering. Arbeidet inkluderte oppfølging
               av produsenter og leveranser, planlegging av lokale og
               lansering, koordinering av fotografer og modeller, visuell
@@ -173,8 +173,8 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
               når uforutsette utfordringer oppsto.
             </p>
             <p className="muted">
-              Launch coordination · Stakeholder coordination · Visual direction
-              · Content production · Digital publishing · Trello
+              Launch coordination, Stakeholder coordination, Visual direction,
+              Content production, Digital publishing, Trello
             </p>
           </div>
         </section>
