@@ -107,7 +107,7 @@ export default async function HomePage() {
     {
       key: "event-atmosphere",
       src: "/gallery/ages-event-atmosphere.png",
-      alt: "Mennesker samlet under et Ages by HS event",
+      alt: "Mennesker samlet under et Ages by HS arrangement",
       className: "gallery-left-atmosphere",
       width: 1600,
       height: 1100,
@@ -165,7 +165,7 @@ export default async function HomePage() {
     {
       key: "event-branding",
       src: "/gallery/ages-event-branding.jpg",
-      alt: "Ages by HS logo vist under en eventpresentasjon",
+      alt: "Ages by HS logo vist under en arrangementspresentasjon",
       className: "gallery-closing-wide",
       width: 1900,
       height: 1150,
@@ -320,8 +320,8 @@ export default async function HomePage() {
       <section className="section section-marquee reveal" aria-label="Fagområder">
         <div className="marquee-wrap">
           <div className="marquee-track">
-            <p>MARKEDSFORING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
-            <p aria-hidden="true">MARKEDSFORING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
+            <p>MARKEDSFØRING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
+            <p aria-hidden="true">MARKEDSFØRING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
           </div>
         </div>
       </section>
