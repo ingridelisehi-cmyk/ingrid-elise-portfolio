@@ -161,19 +161,6 @@ export default async function HomePage() {
       width: 1600,
       height: 1100,
     },
-    {
-      key: "amalie-reel",
-      category: "VIDEO / INNHOLD",
-      title: "Editorial social reel",
-      description: "Videoidé · innhold · redigering · publisering",
-      href: "/projects/ages-by-hs",
-      mediaType: "video",
-      src: "/videos/ages-amalie-reel.mp4",
-      alt: "Vertical reel for Ages by HS",
-      className: "selected-work-medium",
-      width: 1080,
-      height: 1920,
-    },
   ];
   const projectStatementBySlug: Record<string, string> = {
     "ages-by-hs": "Fra idé til merkevareopplevelse gjennom innhold, drift og koordinering.",
