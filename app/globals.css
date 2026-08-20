@@ -829,6 +829,13 @@ p {
   margin-top: clamp(1.4rem, 3.2vw, 2.6rem);
 }
 
+.project-detail-page .reveal,
+.project-detail-page .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 .project-detail-image-section {
   display: block;
 }
