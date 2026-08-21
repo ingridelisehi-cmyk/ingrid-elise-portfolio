@@ -867,6 +867,55 @@ p {
   padding-bottom: 1.2rem;
 }
 
+.ages-case-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.2rem;
+  display: grid;
+  gap: 0.58rem;
+  max-width: 78ch;
+}
+
+.ages-case-title {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3.3rem);
+  letter-spacing: 0.015em;
+}
+
+.ages-role-line {
+  margin: 0;
+  font-size: clamp(0.88rem, 1.35vw, 1rem);
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.ages-case-track {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-serif-editorial);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.01em;
+  color: var(--charcoal);
+}
+
+.ages-case-scope {
+  margin: 0.3rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ages-case-scope li {
+  border: 1px solid var(--line);
+  padding: 0.34rem 0.62rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  background: rgba(255, 255, 255, 0.34);
+}
+
 .thesis-meta {
   display: flex;
   flex-wrap: wrap;

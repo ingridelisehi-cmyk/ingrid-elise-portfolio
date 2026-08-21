@@ -52,19 +52,52 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
 
   return (
     <article className="project-detail-page">
-      <header className={isMasterThesis ? "thesis-header" : undefined}>
-        <p className="eyebrow">{projectDetail.category ?? "Prosjekt"}</p>
-        <h1>{projectDetail.title}</h1>
-        <p className="lead">{projectDetail.summary}</p>
+      <header
+        className={
+          isMasterThesis
+            ? "thesis-header"
+            : isAgesByHs
+              ? "ages-case-header"
+              : undefined
+        }
+      >
+        {isAgesByHs ? (
+          <>
+            <p className="eyebrow">Case</p>
+            <h1 className="ages-case-title">AGES BY HS</h1>
+            <p className="ages-role-line">
+              Co-founder · Brand strategy · Creative direction · Content ·
+              Production
+            </p>
+            <p className="ages-case-track">
+              Strategisk · Kommersiell · Kreativ erfaring
+            </p>
+            <ul className="ages-case-scope" aria-label="Arbeidsomraader">
+              <li>Merkevarebygging</li>
+              <li>Konsept</li>
+              <li>Innhold</li>
+              <li>Events</li>
+              <li>Produkt</li>
+              <li>Produksjon</li>
+              <li>Visuell retning</li>
+            </ul>
+          </>
+        ) : (
+          <>
+            <p className="eyebrow">{projectDetail.category ?? "Prosjekt"}</p>
+            <h1>{projectDetail.title}</h1>
+            <p className="lead">{projectDetail.summary}</p>
 
-        {isMasterThesis ? (
-          <div className="thesis-meta section" style={{marginTop: "1.5rem"}}>
-            <span className="thesis-pill">Master i markedsføringsledelse</span>
-            <span className="thesis-pill">Høyskolen Kristiania</span>
-            <span className="thesis-pill">Kvalitativ studie</span>
-            <span className="thesis-pill">2024</span>
-          </div>
-        ) : null}
+            {isMasterThesis ? (
+              <div className="thesis-meta section" style={{marginTop: "1.5rem"}}>
+                <span className="thesis-pill">Master i markedsføringsledelse</span>
+                <span className="thesis-pill">Høyskolen Kristiania</span>
+                <span className="thesis-pill">Kvalitativ studie</span>
+                <span className="thesis-pill">2024</span>
+              </div>
+            ) : null}
+          </>
+        )}
       </header>
 
       {projectDetail.imageUrls?.length ? (
