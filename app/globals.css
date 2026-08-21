@@ -147,10 +147,10 @@ h2,
 h3 {
   font-family: var(--font-sans-ui);
   font-weight: 550;
-  line-height: 1.08;
+  line-height: 1.1;
   margin: 0 0 1rem;
   color: var(--charcoal);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
 }
 
 h1 {
@@ -167,6 +167,7 @@ h3 {
 
 p {
   margin: 0;
+  letter-spacing: 0.002em;
 }
 
 .lead {
@@ -190,6 +191,8 @@ p {
   letter-spacing: 0.045em;
   text-transform: uppercase;
   font-size: 0.82rem;
+  font-weight: 520;
+  line-height: 1.15;
   background: color-mix(in srgb, var(--warm-white) 78%, transparent);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.46);
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
@@ -249,9 +252,9 @@ p {
 
 .story-lead {
   max-width: 22ch;
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-serif-editorial);
   font-size: clamp(2rem, 3.4vw, 3.2rem);
-  line-height: 1.08;
+  line-height: 1.1;
   margin-top: 1rem;
 }
 
@@ -274,7 +277,7 @@ p {
   font-weight: 560;
   max-width: 12ch;
   font-size: clamp(2.6rem, 7.1vw, 5.7rem);
-  line-height: 1.02;
+  line-height: 1.04;
   letter-spacing: 0.002em;
 }
 
@@ -679,7 +682,7 @@ p {
   margin-top: 0.35rem;
   margin-bottom: 0.8rem;
   font-size: clamp(2.3rem, 5.2vw, 4rem);
-  line-height: 1.03;
+  line-height: 1.06;
 }
 
 .thinking-intro {
@@ -1113,9 +1116,28 @@ p {
 }
 
 @media (max-width: 900px) {
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.008em;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.1em;
+  }
+
   .hero-title {
     max-width: 11.5ch;
     font-size: clamp(2.5rem, 8.8vw, 4.8rem);
+    line-height: 1.05;
+  }
+
+  .home-closing-title {
+    line-height: 1.07;
+  }
+
+  .editorial-quote {
+    line-height: 1.24;
   }
 
   .home-hero + .section {
@@ -1209,15 +1231,31 @@ p {
 }
 
 @media (max-width: 640px) {
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.006em;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+    letter-spacing: 0.045em;
+  }
+
+  .btn {
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
   .hero-title {
     max-width: 12ch;
     font-size: clamp(2.35rem, 10.8vw, 3.3rem);
-    line-height: 1.04;
+    line-height: 1.06;
   }
 
   .home-story-lead {
     font-size: clamp(1.1rem, 4.7vw, 1.3rem);
-    line-height: 1.42;
+    line-height: 1.48;
   }
 
   .header-inner {
