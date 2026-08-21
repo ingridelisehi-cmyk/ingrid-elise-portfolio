@@ -541,7 +541,7 @@ p {
   aspect-ratio: auto;
   object-fit: cover;
   object-position: center center;
-  clip-path: inset(0 1.2% 0 1.2%);
+  clip-path: inset(0 0.9% 0 0.9%);
   border-radius: 4px;
   overflow: hidden;
   background: #000;
@@ -551,6 +551,7 @@ p {
 
 .creative-video-feature .creative-video {
   aspect-ratio: auto;
+  object-position: 50% 26%;
   width: 100%;
   max-width: 100%;
   max-height: clamp(340px, 47vh, 560px);
@@ -558,11 +559,13 @@ p {
 
 .creative-video-side-a .creative-video {
   aspect-ratio: auto;
+  object-position: 50% 20%;
   max-height: clamp(340px, 45vh, 540px);
 }
 
 .creative-video-side-b .creative-video {
   aspect-ratio: auto;
+  object-position: 56% 42%;
   max-height: clamp(280px, 38vh, 460px);
 }
 
