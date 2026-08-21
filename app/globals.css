@@ -938,9 +938,15 @@ p {
 
 .ages-sequence-item,
 .ages-sequence-links {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--line) 68%, transparent);
   padding-top: clamp(0.8rem, 1.9vw, 1.05rem);
   padding-bottom: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+.ages-sequence-item {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .ages-sequence-item p:last-child,
