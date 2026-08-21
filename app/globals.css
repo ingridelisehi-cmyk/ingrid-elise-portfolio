@@ -11,12 +11,14 @@
   --oxblood: #5e3139;
   --line: #d4c8bb;
   --line-soft: rgba(113, 90, 68, 0.2);
+  --font-sans-ui: var(--font-inter), "Suisse Intl", "Neue Haas Grotesk Text", "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif-editorial: var(--font-cormorant), "Ivar Text", "Canela", "Noe Display", "Bodoni Moda", "Times New Roman", serif;
 }
 
 @theme inline {
   --color-background: var(--cream);
   --color-foreground: var(--near-black);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-sans-ui);
 }
 
 * {
@@ -31,7 +33,7 @@ body {
     radial-gradient(circle at 72% 88%, rgba(94, 49, 57, 0.05), transparent 38%),
     var(--cream);
   color: var(--near-black);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-sans-ui);
   line-height: 1.68;
   text-rendering: optimizeLegibility;
 }
@@ -83,9 +85,10 @@ a:hover {
 }
 
 .brand {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-sans-ui);
   font-size: clamp(1.5rem, 2.3vw, 2rem);
-  letter-spacing: 0.03em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .site-nav {
@@ -142,11 +145,12 @@ main {
 h1,
 h2,
 h3 {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-sans-ui);
   font-weight: 550;
   line-height: 1.08;
   margin: 0 0 1rem;
   color: var(--charcoal);
+  letter-spacing: -0.012em;
 }
 
 h1 {
@@ -266,16 +270,18 @@ p {
 }
 
 .hero-title {
+  font-family: var(--font-serif-editorial);
+  font-weight: 560;
   max-width: 12ch;
   font-size: clamp(2.6rem, 7.1vw, 5.7rem);
   line-height: 1.02;
-  letter-spacing: 0.003em;
+  letter-spacing: 0.002em;
 }
 
 .home-story-lead {
   max-width: 38ch;
   font-size: clamp(1.22rem, 1.85vw, 1.68rem);
-  line-height: 1.36;
+  line-height: 1.42;
 }
 
 .home-support {
@@ -310,7 +316,7 @@ p {
 }
 
 .editorial-quote {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-serif-editorial);
   font-size: clamp(1.35rem, 2.2vw, 1.8rem);
   line-height: 1.2;
 }
@@ -381,9 +387,11 @@ p {
 }
 
 .project-editorial-title {
+  font-family: var(--font-sans-ui);
+  font-weight: 560;
   margin: 0;
   font-size: clamp(1.42rem, 2.3vw, 2rem);
-  line-height: 1.12;
+  line-height: 1.14;
 }
 
 .project-editorial-areas {
@@ -666,6 +674,8 @@ p {
 }
 
 .home-closing-title {
+  font-family: var(--font-serif-editorial);
+  font-weight: 560;
   margin-top: 0.35rem;
   margin-bottom: 0.8rem;
   font-size: clamp(2.3rem, 5.2vw, 4rem);
@@ -686,9 +696,10 @@ p {
 }
 
 .thinking-question p {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-serif-editorial);
+  font-weight: 560;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .thinking-sections {
@@ -831,7 +842,7 @@ p {
 }
 
 .thesis-metric-value {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-serif-editorial);
   font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   line-height: 1;
   color: var(--near-black);
@@ -1009,11 +1020,18 @@ p {
 }
 
 .question-label {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-sans-ui);
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0.4rem;
+}
+
+.editorial-intro h1,
+.principle-hero h2 {
+  font-family: var(--font-serif-editorial);
+  font-weight: 560;
+  letter-spacing: -0.008em;
 }
 
 .principle-details {
