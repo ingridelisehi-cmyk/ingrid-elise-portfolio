@@ -512,6 +512,7 @@ p {
   margin: 0;
   width: 100%;
   min-width: 0;
+  overflow: hidden;
 }
 
 .creative-video-feature {
@@ -540,6 +541,7 @@ p {
   aspect-ratio: auto;
   object-fit: cover;
   object-position: center center;
+  clip-path: inset(0 1.2% 0 1.2%);
   border-radius: 4px;
   overflow: hidden;
   background: #000;
