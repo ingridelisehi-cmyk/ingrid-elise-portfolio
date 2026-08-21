@@ -538,18 +538,18 @@ p {
   width: 100%;
   max-width: 100%;
   aspect-ratio: auto;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 4px;
   overflow: hidden;
-  background: transparent;
+  background: #000;
   border: 0;
   box-shadow: none;
 }
 
 .creative-video-feature .creative-video {
   aspect-ratio: auto;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   max-height: clamp(340px, 47vh, 560px);
 }
