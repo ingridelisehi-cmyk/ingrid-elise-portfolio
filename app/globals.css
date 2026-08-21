@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #f6f2ec;
-  --warm-brown: #88745b;
-  --near-black: #332e29;
-  --line: #d9d0c4;
+  --cream: #f6f1ea;
+  --warm-white: #fdfaf6;
+  --near-black: #26211e;
+  --charcoal: #1f1b19;
+  --espresso: #4a362a;
+  --taupe: #7d6d5d;
+  --warm-brown: #7c644c;
+  --oxblood: #5e3139;
+  --line: #d4c8bb;
+  --line-soft: rgba(113, 90, 68, 0.2);
 }
 
 @theme inline {
@@ -20,12 +26,14 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 14% 10%, rgba(255, 255, 255, 0.64), transparent 44%),
-    radial-gradient(circle at 88% 18%, rgba(226, 214, 198, 0.24), transparent 42%),
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.74), transparent 44%),
+    radial-gradient(circle at 88% 16%, rgba(205, 178, 154, 0.14), transparent 46%),
+    radial-gradient(circle at 72% 88%, rgba(94, 49, 57, 0.05), transparent 38%),
     var(--cream);
   color: var(--near-black);
   font-family: var(--font-inter), sans-serif;
   line-height: 1.68;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -35,12 +43,14 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--warm-brown);
+  outline: 2px solid rgba(94, 49, 57, 0.5);
   outline-offset: 2px;
 }
 
 a:hover {
   text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--oxblood) 48%, transparent);
+  text-underline-offset: 0.18em;
 }
 
 .site-shell {
@@ -59,8 +69,9 @@ a:hover {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(8px);
-  background: rgba(247, 244, 240, 0.86);
+  background: rgba(248, 243, 237, 0.9);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(38, 33, 30, 0.03);
   padding: 1.1rem 0;
 }
 
@@ -74,7 +85,7 @@ a:hover {
 .brand {
   font-family: var(--font-cormorant), serif;
   font-size: clamp(1.5rem, 2.3vw, 2rem);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 .site-nav {
@@ -85,8 +96,10 @@ a:hover {
 
 .site-nav a {
   font-size: 0.95rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  color: var(--taupe);
   position: relative;
+  transition: color 0.22s ease;
 }
 
 .site-nav a::after {
@@ -96,10 +109,14 @@ a:hover {
   bottom: -0.15rem;
   width: 100%;
   height: 1px;
-  background: currentColor;
+  background: color-mix(in srgb, var(--oxblood) 34%, var(--charcoal));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--charcoal);
 }
 
 .site-nav a:hover::after {
@@ -117,18 +134,19 @@ main {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.09em;
   font-size: 0.76rem;
-  color: var(--warm-brown);
+  color: var(--espresso);
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-cormorant), serif;
-  font-weight: 600;
+  font-weight: 550;
   line-height: 1.08;
   margin: 0 0 1rem;
+  color: var(--charcoal);
 }
 
 h1 {
@@ -150,6 +168,7 @@ p {
 .lead {
   max-width: 64ch;
   font-size: clamp(1.05rem, 1.3vw, 1.28rem);
+  color: color-mix(in srgb, var(--charcoal) 86%, var(--taupe));
 }
 
 .button-row {
@@ -161,22 +180,35 @@ p {
 
 .btn {
   display: inline-block;
-  border: 1px solid var(--near-black);
-  padding: 0.72rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--charcoal) 86%, white);
+  padding: 0.72rem 1.3rem;
   border-radius: 999px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
   font-size: 0.82rem;
-  transition: all 0.2s ease;
+  background: color-mix(in srgb, var(--warm-white) 78%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.46);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
-  background: var(--near-black);
-  color: var(--cream);
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--warm-white);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .btn-secondary {
-  border-color: var(--line);
-  color: var(--warm-brown);
+  border-color: var(--line-soft);
+  color: var(--espresso);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: color-mix(in srgb, var(--oxblood) 10%, transparent);
+  border-color: color-mix(in srgb, var(--oxblood) 26%, var(--line));
+  color: var(--charcoal);
 }
 
 .grid {
@@ -195,9 +227,9 @@ p {
 .card {
   border: 1px solid var(--line);
   padding: 1.55rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.38);
-  box-shadow: 0 6px 18px rgba(35, 30, 24, 0.035);
+  border-radius: 16px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.52), rgba(253, 250, 246, 0.3));
+  box-shadow: 0 10px 28px rgba(35, 30, 24, 0.04);
 }
 
 .home-hero {
@@ -264,9 +296,9 @@ p {
 
 .hero-note {
   margin-top: 0.6rem;
-  border: 1px solid rgba(136, 116, 91, 0.16);
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--oxblood));
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.42), rgba(244, 235, 228, 0.24));
 }
 
 .hero-note p + p {
@@ -340,7 +372,7 @@ p {
 
 .project-editorial-item:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.34), rgba(245, 236, 228, 0.18));
 }
 
 .project-editorial-main {
@@ -355,7 +387,7 @@ p {
 }
 
 .project-editorial-areas {
-  color: #6c604f;
+  color: var(--taupe);
   font-size: 0.98rem;
   letter-spacing: 0.01em;
 }
@@ -364,6 +396,7 @@ p {
   width: fit-content;
   margin-top: 0.15rem;
   letter-spacing: 0.02em;
+  color: var(--espresso);
 }
 
 .project-editorial-link:hover {
@@ -455,7 +488,8 @@ p {
   object-fit: contain;
   border-radius: 10px;
   background: transparent;
-  box-shadow: 0 3px 14px rgba(40, 35, 29, 0.055);
+  border: 1px solid var(--line-soft);
+  box-shadow: 0 10px 24px rgba(40, 35, 29, 0.08);
 }
 
 .creative-video-footnote {
@@ -463,7 +497,7 @@ p {
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .editorial-gallery-section {
@@ -497,7 +531,8 @@ p {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, white);
   transition: transform 0.26s ease, opacity 0.26s ease;
 }
 
@@ -511,7 +546,7 @@ p {
   font-size: 0.73rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .gallery-hero {
@@ -589,7 +624,7 @@ p {
   font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 @keyframes marqueeMove {
@@ -676,7 +711,7 @@ p {
 .thinking-quote {
   border-left: 2px solid var(--line);
   padding-left: 1rem;
-  color: #574b3d;
+  color: color-mix(in srgb, var(--espresso) 78%, var(--taupe));
   font-style: italic;
 }
 
@@ -732,7 +767,7 @@ p {
   font-size: 0.92rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .press-copy {
@@ -807,7 +842,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 0.72rem;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .thesis-highlight {
@@ -859,12 +894,12 @@ p {
   border: 1px solid var(--line);
   padding: 0.35rem 0.7rem;
   font-size: 0.85rem;
-  color: #6c604f;
+  color: var(--taupe);
   background: rgba(255, 255, 255, 0.35);
 }
 
 .muted {
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .about-grid {
@@ -999,7 +1034,7 @@ p {
 }
 
 .experience-list li {
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .closing-cta {
@@ -1041,7 +1076,7 @@ p {
 
 .exploring-card p {
   max-width: 100%;
-  color: #6c604f;
+  color: var(--taupe);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -1050,7 +1085,7 @@ p {
   border-top: 1px solid var(--line);
   padding: 1.5rem 0 2rem;
   font-size: 0.9rem;
-  color: #6c604f;
+  color: var(--taupe);
 }
 
 .footer-note {
