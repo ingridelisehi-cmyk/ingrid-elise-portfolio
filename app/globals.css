@@ -889,12 +889,14 @@ p {
   color: var(--taupe);
 }
 
-.ages-case-track {
+.ages-case-intro {
   margin: 0.15rem 0 0;
   font-family: var(--font-serif-editorial);
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-size: clamp(1rem, 1.45vw, 1.14rem);
   letter-spacing: 0.01em;
   color: var(--charcoal);
+  max-width: 62ch;
+  line-height: 1.52;
 }
 
 .ages-case-scope {
@@ -914,6 +916,55 @@ p {
   text-transform: uppercase;
   color: var(--taupe);
   background: rgba(255, 255, 255, 0.34);
+}
+
+.ages-detail-grid {
+  gap: 1rem;
+}
+
+.ages-detail-grid .card {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ages-detail-grid .card:nth-child(1),
+.ages-detail-grid .card:nth-child(2) {
+  border-top: 2px solid color-mix(in srgb, var(--line) 55%, var(--charcoal));
+}
+
+.ages-detail-grid .card:nth-child(3),
+.ages-detail-grid .card:nth-child(4) {
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.68), rgba(245, 236, 228, 0.52));
+}
+
+.project-links-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.project-links-list p {
+  margin: 0;
+}
+
+.project-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.34rem 0.64rem;
+  border: 1px solid var(--line);
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  color: var(--charcoal);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.project-link-chip:hover {
+  border-color: var(--charcoal);
+}
+
+.ages-learnings-section .card {
+  border-style: dashed;
 }
 
 .thesis-meta {

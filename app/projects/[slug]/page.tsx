@@ -11,6 +11,21 @@ type ProjectPageProps = {
   params: Promise<{slug: string}>;
 };
 
+function getProjectLinkLabel(label: string | undefined, url: string) {
+  const trimmedLabel = label?.trim();
+  if (trimmedLabel && !/^https?:\/\//i.test(trimmedLabel)) {
+    return trimmedLabel;
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+    const host = parsedUrl.hostname.replace(/^www\./i, "");
+    return `Besok ${host} ↗`;
+  } catch {
+    return "Besok lenke ↗";
+  }
+}
+
 export async function generateStaticParams() {
   const rawSlugs = await client.fetch<unknown>(projectSlugsQuery);
   const slugsFromSanity = Array.isArray(rawSlugs)
@@ -64,13 +79,14 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         {isAgesByHs ? (
           <>
             <p className="eyebrow">Case</p>
-            <h1 className="ages-case-title">AGES BY HS</h1>
+            <h1 className="ages-case-title">Ages by HS</h1>
             <p className="ages-role-line">
               Co-founder · Brand strategy · Creative direction · Content ·
               Production
             </p>
-            <p className="ages-case-track">
-              Strategisk · Kommersiell · Kreativ erfaring
+            <p className="ages-case-intro">
+              Et operativt merkevarecase fra strategi og konsept til
+              innhold, produksjon, kundedialog og visuell retning.
             </p>
             <ul className="ages-case-scope" aria-label="Arbeidsomraader">
               <li>Merkevarebygging</li>
@@ -213,7 +229,9 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </section>
       ) : null}
 
-      <section className="section project-detail-grid">
+      <section
+        className={`section project-detail-grid${isAgesByHs ? " ages-detail-grid" : ""}`}
+      >
         <div className="card">
           <p className="eyebrow">Utfordring</p>
           <p>{projectDetail.challenge ?? "Ikke spesifisert enda."}</p>
@@ -232,18 +250,28 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         <div className="card">
           <p className="eyebrow">Lenker</p>
           {projectDetail.links?.length ? (
-            <div>
+            <div className="project-links-list">
               {projectDetail.links.map((link) => (
                 <p key={link.url}>
-                  <a href={link.url} target="_blank" rel="noreferrer">
-                    {link.label}
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-link-chip"
+                  >
+                    {getProjectLinkLabel(link.label, link.url)}
                   </a>
                 </p>
               ))}
             </div>
           ) : projectDetail.projectUrl ? (
-            <a href={projectDetail.projectUrl} target="_blank" rel="noreferrer">
-              {projectDetail.projectUrl}
+            <a
+              href={projectDetail.projectUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project-link-chip"
+            >
+              {getProjectLinkLabel(undefined, projectDetail.projectUrl)}
             </a>
           ) : (
             <p>Ingen lenke lagt til ennå.</p>
@@ -252,7 +280,7 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       </section>
 
       {projectDetail.learnings?.length ? (
-        <section className="section">
+        <section className={`section${isAgesByHs ? " ages-learnings-section" : ""}`}>
           <p className="eyebrow">Læringer</p>
           <div className="grid cards-2" style={{marginTop: "1rem"}}>
             {projectDetail.learnings.map((learning) => (
