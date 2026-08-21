@@ -193,17 +193,15 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
       ) : null}
 
       {isAgesByHs ? (
-        <section className="section press-feature">
-          <div className="card press-feature-card">
-            <p className="eyebrow">Organisk synlighet</p>
-            <p className="press-copy">
-              Gjennom networking og samarbeid bygget vi organisk synlighet for
-              Ages by HS, blant annet gjennom profiler som brukte plaggene
-              våre, redaksjonell omtale i Melk &amp; Honning og eksponering
-              gjennom Serena sitt show under Oslo Runway, som ble dekket av
-              ELLE.
-            </p>
-          </div>
+        <section className="section ages-organic-feature">
+          <p className="eyebrow">Organisk synlighet</p>
+          <p>
+            Gjennom networking og samarbeid bygget vi organisk synlighet for
+            Ages by HS, blant annet gjennom profiler som brukte plaggene
+            våre, redaksjonell omtale i Melk &amp; Honning og eksponering
+            gjennom Serena sitt show under Oslo Runway, som ble dekket av
+            ELLE.
+          </p>
         </section>
       ) : null}
 
@@ -229,55 +227,84 @@ export default async function ProjectDetailPage({params}: ProjectPageProps) {
         </section>
       ) : null}
 
-      <section
-        className={`section project-detail-grid${isAgesByHs ? " ages-detail-grid" : ""}`}
-      >
-        <div className="card">
-          <p className="eyebrow">Utfordring</p>
-          <p>{projectDetail.challenge ?? "Ikke spesifisert enda."}</p>
-        </div>
+      {isAgesByHs ? (
+        <section className="section ages-case-sequence" aria-label="Case-sekvens">
+          <article className="ages-sequence-item">
+            <p className="eyebrow">Utfordring</p>
+            <p>{projectDetail.challenge ?? "Ikke spesifisert enda."}</p>
+          </article>
 
-        <div className="card">
-          <p className="eyebrow">Prosess</p>
-          <p>{projectDetail.process ?? "Ikke spesifisert enda."}</p>
-        </div>
+          <article className="ages-sequence-item">
+            <p className="eyebrow">Prosess</p>
+            <p>{projectDetail.process ?? "Ikke spesifisert enda."}</p>
+          </article>
 
-        <div className="card">
-          <p className="eyebrow">Resultat</p>
-          <p>{projectDetail.outcome ?? "Ikke spesifisert enda."}</p>
-        </div>
+          <article className="ages-sequence-item">
+            <p className="eyebrow">Resultat</p>
+            <p>{projectDetail.outcome ?? "Ikke spesifisert enda."}</p>
+          </article>
 
-        <div className="card">
-          <p className="eyebrow">Lenker</p>
-          {projectDetail.links?.length ? (
-            <div className="project-links-list">
-              {projectDetail.links.map((link) => (
-                <p key={link.url}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link-chip"
-                  >
-                    {getProjectLinkLabel(link.label, link.url)}
-                  </a>
-                </p>
-              ))}
-            </div>
-          ) : projectDetail.projectUrl ? (
+          <div className="ages-sequence-links">
+            <p className="eyebrow">Lenker</p>
             <a
-              href={projectDetail.projectUrl}
+              href="https://agesbyhs.com"
               target="_blank"
               rel="noreferrer"
-              className="project-link-chip"
+              className="ages-inline-link"
             >
-              {getProjectLinkLabel(undefined, projectDetail.projectUrl)}
+              Besøk agesbyhs.com ↗
             </a>
-          ) : (
-            <p>Ingen lenke lagt til ennå.</p>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        <section className="section project-detail-grid">
+          <div className="card">
+            <p className="eyebrow">Utfordring</p>
+            <p>{projectDetail.challenge ?? "Ikke spesifisert enda."}</p>
+          </div>
+
+          <div className="card">
+            <p className="eyebrow">Prosess</p>
+            <p>{projectDetail.process ?? "Ikke spesifisert enda."}</p>
+          </div>
+
+          <div className="card">
+            <p className="eyebrow">Resultat</p>
+            <p>{projectDetail.outcome ?? "Ikke spesifisert enda."}</p>
+          </div>
+
+          <div className="card">
+            <p className="eyebrow">Lenker</p>
+            {projectDetail.links?.length ? (
+              <div className="project-links-list">
+                {projectDetail.links.map((link) => (
+                  <p key={link.url}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-link-chip"
+                    >
+                      {getProjectLinkLabel(link.label, link.url)}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            ) : projectDetail.projectUrl ? (
+              <a
+                href={projectDetail.projectUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link-chip"
+              >
+                {getProjectLinkLabel(undefined, projectDetail.projectUrl)}
+              </a>
+            ) : (
+              <p>Ingen lenke lagt til ennå.</p>
+            )}
+          </div>
+        </section>
+      )}
 
       {projectDetail.learnings?.length ? (
         <section className={`section${isAgesByHs ? " ages-learnings-section" : ""}`}>
