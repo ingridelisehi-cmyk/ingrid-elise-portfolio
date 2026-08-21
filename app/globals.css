@@ -195,10 +195,10 @@ p {
 }
 
 .btn:hover {
-  background: color-mix(in srgb, var(--charcoal) 5%, transparent);
+  background: color-mix(in srgb, var(--charcoal) 4%, transparent);
   border-color: color-mix(in srgb, var(--charcoal) 70%, var(--line));
   color: var(--charcoal);
-  transform: translateY(-0.5px);
+  transform: translateY(-0.25px);
   text-decoration: none;
 }
 
@@ -453,7 +453,7 @@ p {
 
 .project-editorial-item.has-preview:hover .project-editorial-preview {
   opacity: 1;
-  transform: translateY(0) scale(1.01);
+  transform: translateY(0) scale(1.006);
 }
 
 .home-closing {
@@ -546,7 +546,7 @@ p {
 }
 
 .creative-video-item:hover .creative-video {
-  transform: scale(1.01);
+  transform: scale(1.006);
   opacity: 0.99;
 }
 
@@ -617,7 +617,7 @@ p {
 }
 
 .editorial-gallery-item:hover .editorial-gallery-image {
-  transform: scale(1.012);
+  transform: scale(1.009);
   opacity: 0.99;
 }
 
