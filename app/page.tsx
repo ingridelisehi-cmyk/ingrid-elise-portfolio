@@ -287,7 +287,7 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section className="section editorial-gallery-section reveal" aria-labelledby="visualt-arbeid-heading">
+      <section className="section editorial-gallery-section" aria-labelledby="visualt-arbeid-heading">
         <p className="eyebrow">VISUELT ARBEID</p>
         <div className="editorial-gallery-intro">
           <h2 id="visualt-arbeid-heading">Utvalgte øyeblikk, innhold &amp; merkevarearbeid.</h2>
