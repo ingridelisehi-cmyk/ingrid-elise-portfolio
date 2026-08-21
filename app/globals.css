@@ -530,7 +530,7 @@ p {
 .creative-video-side-b {
   grid-column: 8 / 13;
   grid-row: 2 / 3;
-  margin-top: clamp(-0.75rem, -1.1vw, -0.25rem);
+  margin-top: clamp(-1.15rem, -1.7vw, -0.55rem);
 }
 
 .creative-video {
@@ -565,7 +565,7 @@ p {
 }
 
 .creative-video-footnote {
-  margin-top: clamp(1.3rem, 2.9vw, 2.15rem);
+  margin-top: clamp(0.85rem, 2.1vw, 1.5rem);
   margin-left: auto;
   width: fit-content;
   font-size: 0.69rem;
