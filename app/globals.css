@@ -502,11 +502,7 @@ p {
 .creative-video-layout {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-areas:
-    ". feature feature feature feature feature feature feature side-a side-a . ."
-    ". feature feature feature feature feature feature feature side-a side-a . ."
-    ". feature feature feature feature feature feature feature . side-b side-b side-b"
-    ". . . . . . . . . side-b side-b side-b";
+  grid-template-rows: auto auto auto auto;
   align-items: start;
   gap: clamp(1.25rem, 3.1vw, 2.6rem);
   margin-inline: clamp(0.2rem, 1vw, 1rem);
@@ -515,26 +511,31 @@ p {
 .creative-video-item {
   margin: 0;
   width: 100%;
+  min-width: 0;
 }
 
 .creative-video-feature {
-  grid-area: feature;
+  grid-column: 1 / 8;
+  grid-row: 1 / 4;
   align-self: start;
 }
 
 .creative-video-side-a {
-  grid-area: side-a;
+  grid-column: 8 / 11;
+  grid-row: 1 / 3;
   margin-top: clamp(0.9rem, 2.1vw, 1.8rem);
 }
 
 .creative-video-side-b {
-  grid-area: side-b;
+  grid-column: 9 / 13;
+  grid-row: 3 / 5;
   margin-top: clamp(0.95rem, 2.3vw, 1.95rem);
 }
 
 .creative-video {
   display: block;
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 4px;
