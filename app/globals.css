@@ -641,8 +641,8 @@ p {
 }
 
 .gallery-right-brand {
-  grid-column: 7 / 13;
-  margin-top: clamp(0.4rem, 1.5vw, 1rem);
+  grid-column: 6 / 13;
+  margin-top: clamp(-1.2rem, -2.4vw, -0.6rem);
 }
 
 .gallery-campaign-large {
@@ -656,9 +656,13 @@ p {
 }
 
 .gallery-closing-detail {
-  grid-column: 9 / 13;
-  align-self: end;
-  margin-bottom: clamp(1rem, 2.4vw, 1.8rem);
+  grid-column: 6 / 13;
+  align-self: start;
+  margin-top: clamp(-6.5rem, -11vw, -3.8rem);
+}
+
+.gallery-closing-detail + .gallery-closing-detail {
+  margin-top: clamp(-8rem, -13vw, -4.5rem);
 }
 
 .section-marquee {
