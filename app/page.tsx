@@ -319,7 +319,7 @@ export default async function HomePage() {
                 priority={index === 0}
               />
               {image.label ? (
-                <figcaption className="editorial-gallery-label">{image.label}</figcaption>
+                <figcaption className="editorial-gallery-label" aria-hidden="true"> </figcaption>
               ) : null}
             </figure>
           ))}
