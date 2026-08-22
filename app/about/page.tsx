@@ -4,25 +4,27 @@ export default function AboutPage() {
   return (
     <section>
       <p className="eyebrow">Om</p>
-      <h1>Litt mer om meg</h1>
+      <h1 className="about-title">
+        Litt mer <span className="about-title-accent">om meg</span>
+      </h1>
 
       <div className="about-grid section">
         <PortraitImage />
 
-        <div className="grid" style={{ gap: "1rem" }}>
+        <div className="grid about-copy" style={{ gap: "1rem" }}>
           <p className="lead">
-            Jeg heter Ingrid Elise.
+            Jeg liker å jobbe der kreativitet og struktur møtes, og trives best
+            når jeg får være tett på både mennesker, ideer og gjennomføring.
           </p>
           <p>
-            Jeg har vært med på å bygge Ages by HS fra bunnen av. I en liten
-            bedrift betyr det å ha mange hatter, og jeg har jobbet med alt fra
-            innholdsproduksjon og kampanjer til produktutvikling, sourcing,
-            kundedialog og logistikk. Underveis har vi vært opptatt av å lære
-            av andre, teste nye ideer og utvikle merkevaren steg for steg.
+            Jeg har alltid vært opptatt av hvordan ting ser ut, føles og
+            kommuniseres, men også av hva som faktisk fungerer. Derfor liker jeg
+            å bevege meg mellom det kreative og det praktiske, fra idé og
+            visuell retning til planlegging, koordinering og ferdig resultat.
           </p>
           <p>
-            Jeg liker best arbeid der jeg kan kombinere kreativitet og struktur,
-            og lære underveis.
+            Jeg lærer fort, liker ansvar og får mye energi av å jobbe sammen med
+            andre som vil skape noe bra.
           </p>
         </div>
       </div>

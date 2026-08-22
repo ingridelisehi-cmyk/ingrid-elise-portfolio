@@ -10,54 +10,50 @@ export default async function ContactPage() {
   const email = data?.email ?? fallbackSiteSettings.email;
   const location = data?.location ?? fallbackSiteSettings.location;
   const linkedinUrl = data?.linkedinUrl ?? fallbackSiteSettings.linkedinUrl;
-  const linkedinLabel = linkedinUrl
-    .replace("https://", "")
-    .replace("http://", "")
-    .replace(/\/$/, "");
 
   return (
-    <section>
+    <section className="contact-page">
       <p className="eyebrow">Kontakt</p>
-      <h1>Kontakt</h1>
+      <h1 className="contact-title">Kontakt</h1>
       <p className="lead">
         Ta gjerne kontakt hvis du vil prate om prosjekter eller muligheter.
       </p>
 
-      <div className="grid section" style={{ gap: "1.5rem" }}>
-        <div className="card">
-          <h3>E-post</h3>
-          <p>
+      <dl className="contact-list section">
+        <div className="contact-item">
+          <dt>E-post</dt>
+          <dd>
             <a href={`mailto:${email}`}>{email}</a>
-          </p>
+          </dd>
         </div>
 
-        <div className="card">
-          <h3>Sted</h3>
-          <p>{location}</p>
+        <div className="contact-item">
+          <dt>Sted</dt>
+          <dd>{location}</dd>
         </div>
 
-        <div className="card">
-          <h3>LinkedIn</h3>
-          <p>
+        <div className="contact-item">
+          <dt>LinkedIn</dt>
+          <dd>
             <a
               href={linkedinUrl}
               target="_blank"
               rel="noreferrer"
             >
-              {linkedinLabel}
+              Se profilen min på LinkedIn ↗
             </a>
-          </p>
+          </dd>
         </div>
 
-        <div className="card">
-          <h3>CV</h3>
-          <p>
+        <div className="contact-item">
+          <dt>CV</dt>
+          <dd>
             <a href="/cv/download" download>
               Last ned CV
             </a>
-          </p>
+          </dd>
         </div>
-      </div>
+      </dl>
     </section>
   );
 }

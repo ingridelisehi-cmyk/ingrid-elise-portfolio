@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ExploringPage() {
   return (
     <>
-      <section className="editorial-intro reveal">
+      <section className="editorial-intro exploring-editorial-intro reveal">
         <p className="eyebrow">Utforsker nå</p>
         <h1>Tanker jeg arbeider med.</h1>
         <p className="lead editorial-lead-intro" style={{ marginTop: "1.5rem" }}>
@@ -11,8 +11,8 @@ export default function ExploringPage() {
         </p>
       </section>
 
-      <section className="section exploring-grid reveal">
-        <article className="exploring-card">
+      <section className="section exploring-grid exploring-grid-editorial reveal">
+        <article className="exploring-card exploring-card-editorial">
           <p className="eyebrow">AI og kreativitet</p>
           <h3>Når menneske og teknologi jobber sammen.</h3>
           <p>
@@ -20,7 +20,7 @@ export default function ExploringPage() {
           </p>
         </article>
 
-        <article className="exploring-card">
+        <article className="exploring-card exploring-card-editorial">
           <p className="eyebrow">Tilhørighet</p>
           <h3>Hva får folk til å komme tilbake?</h3>
           <p>
@@ -28,7 +28,7 @@ export default function ExploringPage() {
           </p>
         </article>
 
-        <article className="exploring-card">
+        <article className="exploring-card exploring-card-editorial">
           <p className="eyebrow">Menneskesentrert design</p>
           <h3>Godt design starter med behov.</h3>
           <p>
@@ -36,7 +36,7 @@ export default function ExploringPage() {
           </p>
         </article>
 
-        <article className="exploring-card">
+        <article className="exploring-card exploring-card-editorial">
           <p className="eyebrow">Produkters levetid</p>
           <h3>Hvorfor varer noen produkter lenger enn andre?</h3>
           <p>
@@ -45,8 +45,8 @@ export default function ExploringPage() {
         </article>
       </section>
 
-      <section className="section reveal closing-cta">
-        <div className="closing-panel">
+      <section className="section reveal closing-cta exploring-closing-cta">
+        <div className="closing-panel exploring-closing-panel">
           <p className="eyebrow">Videre</p>
           <h2>Vil du prate?</h2>
           <p className="lead">

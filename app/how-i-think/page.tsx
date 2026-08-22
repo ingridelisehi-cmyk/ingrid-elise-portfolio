@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function HowIThinkPage() {
   return (
     <>
-      <section className="editorial-intro reveal">
+      <section className="editorial-intro thinking-editorial-intro reveal">
         <p className="eyebrow">Hvordan jeg tenker</p>
         <h1>Fire ting jeg prøver å gjøre i alle prosjekter.</h1>
         <p className="lead editorial-lead-intro" style={{marginTop: "1.5rem"}}>
@@ -11,8 +11,8 @@ export default function HowIThinkPage() {
         </p>
       </section>
 
-      <section className="section principle-section reveal">
-        <article className="principle-hero">
+      <section className="section principle-section principle-section-editorial reveal">
+        <article className="principle-hero principle-hero-editorial">
           <p className="eyebrow">01</p>
           <h2>Start med mennesker</h2>
           <p className="lead editorial-principle-lead">
@@ -24,8 +24,8 @@ export default function HowIThinkPage() {
         </article>
       </section>
 
-      <section className="section principle-section reveal">
-        <article className="principle-hero">
+      <section className="section principle-section principle-section-editorial reveal">
+        <article className="principle-hero principle-hero-editorial">
           <p className="eyebrow">02</p>
           <h2>Tenk i opplevelser</h2>
           <p className="lead editorial-principle-lead">
@@ -40,8 +40,8 @@ export default function HowIThinkPage() {
         </article>
       </section>
 
-      <section className="section principle-section reveal">
-        <article className="principle-hero">
+      <section className="section principle-section principle-section-editorial reveal">
+        <article className="principle-hero principle-hero-editorial">
           <p className="eyebrow">03</p>
           <h2>Nysgjerrighet før antakelser</h2>
           <p className="lead editorial-principle-lead">

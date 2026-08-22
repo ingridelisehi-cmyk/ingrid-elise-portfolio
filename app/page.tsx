@@ -203,8 +203,8 @@ export default async function HomePage() {
         <div className="hero-layout editorial-hero-layout">
           <div>
             <h1 className="hero-title">
-              Jeg liker å forstå hvorfor noe fungerer, og gjøre mer av det.
-            </h1>
+                Jeg liker å <span className="hero-title-accent">forstå hvorfor</span> noe fungerer, og <span className="hero-title-accent">gjøre mer</span> av det.
+              </h1>
             <p className="lead story-lead home-story-lead">
               Jeg kombinerer markedsføring, innhold, merkevare og koordinering
               fra strategi og idé til visuell gjennomføring, publisering og
