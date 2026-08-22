@@ -316,6 +316,7 @@ export default async function HomePage() {
                 height={image.height}
                 sizes={image.sizes}
                 className="editorial-gallery-image"
+                style={{ maxWidth: `${image.width}px` }}
                 priority={index === 0}
               />
               {image.label ? (
