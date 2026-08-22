@@ -656,7 +656,7 @@ p {
 }
 
 .gallery-closing-detail {
-  grid-column: 10 / 13;
+  grid-column: 9 / 13;
   align-self: end;
 }
 
