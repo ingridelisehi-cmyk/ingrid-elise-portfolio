@@ -77,7 +77,7 @@ export default async function HomePage() {
   const editorialGalleryImages: EditorialGalleryImage[] = [
     {
       key: "launch-overview",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/Lansering%2014.jpeg",
+      src: "/Utvalgte til portefølje/Lansering 14.jpeg",
       alt: "Utvalgt portefoljebilde 1",
       className: "gallery-hero",
       width: 1280,
@@ -87,7 +87,7 @@ export default async function HomePage() {
     },
     {
       key: "group-staircase",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2016.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 16.jpeg",
       alt: "Utvalgt portefoljebilde 2",
       className: "gallery-left-large",
       width: 800,
@@ -97,7 +97,7 @@ export default async function HomePage() {
     },
     {
       key: "product-detail",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2022.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 22.jpeg",
       alt: "Utvalgt portefoljebilde 3",
       className: "gallery-right-detail",
       width: 800,
@@ -106,7 +106,7 @@ export default async function HomePage() {
     },
     {
       key: "event-atmosphere",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/Lansering%204.png",
+      src: "/Utvalgte til portefølje/Lansering 4.png",
       alt: "Utvalgt portefoljebilde 4",
       className: "gallery-left-atmosphere",
       width: 640,
@@ -116,7 +116,7 @@ export default async function HomePage() {
     },
     {
       key: "editorial-portrait",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2029.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 29.jpeg",
       alt: "Utvalgt portefoljebilde 5",
       className: "gallery-right-portrait",
       width: 640,
@@ -125,7 +125,7 @@ export default async function HomePage() {
     },
     {
       key: "staircase-overhead",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2030.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 30.jpeg",
       alt: "Utvalgt portefoljebilde 6",
       className: "gallery-wide-overhead",
       width: 640,
@@ -135,7 +135,7 @@ export default async function HomePage() {
     },
     {
       key: "garment-display",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2011.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 11.jpeg",
       alt: "Utvalgt portefoljebilde 7",
       className: "gallery-left-display",
       width: 640,
@@ -144,7 +144,7 @@ export default async function HomePage() {
     },
     {
       key: "brand-tag",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2023.png",
+      src: "/Utvalgte til portefølje/bilder til portefølje 23.png",
       alt: "Utvalgt portefoljebilde 8",
       className: "gallery-right-brand",
       width: 640,
@@ -154,7 +154,7 @@ export default async function HomePage() {
     },
     {
       key: "group-campaign",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2031.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 31.jpeg",
       alt: "Utvalgt portefoljebilde 9",
       className: "gallery-campaign-large",
       width: 857,
@@ -164,7 +164,7 @@ export default async function HomePage() {
     },
     {
       key: "event-branding",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%209.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 9.jpeg",
       alt: "Utvalgt portefoljebilde 10",
       className: "gallery-closing-wide",
       width: 640,
@@ -173,7 +173,7 @@ export default async function HomePage() {
     },
     {
       key: "clothing-rack",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/bilder%20til%20portef%C3%B8lje%2018.jpeg",
+      src: "/Utvalgte til portefølje/bilder til portefølje 18.jpeg",
       alt: "Utvalgt portefoljebilde 11",
       className: "gallery-closing-detail",
       width: 800,
@@ -182,7 +182,7 @@ export default async function HomePage() {
     },
     {
       key: "portfolio-extra",
-      src: "/Utvalgte%20til%20portef%C3%B8lje/Lansering%2012.jpeg",
+      src: "/Utvalgte til portefølje/Lansering 12.jpeg",
       alt: "Utvalgt portefoljebilde 12",
       className: "gallery-closing-detail",
       width: 640,
