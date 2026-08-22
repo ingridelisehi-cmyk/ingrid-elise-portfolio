@@ -14,6 +14,7 @@ export default async function HomePage() {
     width: number;
     height: number;
     sizes: string;
+    maxDisplayWidth?: number;
     label?: string;
   };
 
@@ -83,6 +84,7 @@ export default async function HomePage() {
       width: 1280,
       height: 853,
       sizes: "(max-width: 900px) 100vw, 92vw",
+      maxDisplayWidth: 1080,
       label: "Lansering",
     },
     {
@@ -131,6 +133,7 @@ export default async function HomePage() {
       width: 640,
       height: 960,
       sizes: "(max-width: 900px) 100vw, 88vw",
+      maxDisplayWidth: 520,
       label: "Merkevareopplevelse",
     },
     {
@@ -160,6 +163,7 @@ export default async function HomePage() {
       width: 857,
       height: 916,
       sizes: "(max-width: 900px) 100vw, 82vw",
+      maxDisplayWidth: 700,
       label: "Innhold",
     },
     {
@@ -170,6 +174,7 @@ export default async function HomePage() {
       width: 640,
       height: 960,
       sizes: "(max-width: 900px) 100vw, 78vw",
+      maxDisplayWidth: 520,
     },
     {
       key: "clothing-rack",
@@ -316,7 +321,8 @@ export default async function HomePage() {
                 height={image.height}
                 sizes={image.sizes}
                 className="editorial-gallery-image"
-                style={{ maxWidth: `${image.width}px` }}
+                quality={95}
+                style={{ maxWidth: `${image.maxDisplayWidth ?? image.width}px` }}
                 priority={index === 0}
               />
               {image.label ? (
