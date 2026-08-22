@@ -24,12 +24,12 @@ export default function RootLayout({
                 Ingrid Elise
               </Link>
               <nav className="site-nav" aria-label="Hovednavigasjon">
-                <Link href="/">Hjem</Link>
-                <Link href="/how-i-think">Hvordan jeg tenker</Link>
-                <Link href="/projects">Prosjekter</Link>
-                <Link href="/about">Om</Link>
-                <Link href="/exploring">Utforsker nå</Link>
-                <Link href="/contact">Kontakt</Link>
+                <a href="/">Hjem</a>
+                <a href="/how-i-think">Hvordan jeg tenker</a>
+                <a href="/projects">Prosjekter</a>
+                <a href="/about">Om</a>
+                <a href="/exploring">Utforsker nå</a>
+                <a href="/contact">Kontakt</a>
               </nav>
             </div>
           </header>
