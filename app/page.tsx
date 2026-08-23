@@ -273,7 +273,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source src="/Grand hotel .mp4" type="video/mp4" />
+              <source src="/videos/ages-campaign-reel.mp4" type="video/mp4" />
             </video>
           </figure>
 
