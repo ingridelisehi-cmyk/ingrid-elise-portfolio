@@ -586,8 +586,9 @@ p {
   margin-top: clamp(1.8rem, 4.5vw, 3.2rem);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(1rem, 2.5vw, 2.1rem);
+  gap: clamp(0.85rem, 2vw, 1.7rem);
   align-items: start;
+  grid-auto-flow: dense;
 }
 
 .editorial-gallery-item {
@@ -625,49 +626,52 @@ p {
 }
 
 .gallery-right-detail {
-  grid-column: 9 / 13;
-  align-self: end;
-  margin-top: clamp(1.2rem, 4vw, 3.5rem);
+  grid-column: 8 / 13;
+  align-self: start;
+  margin-top: clamp(0.35rem, 1.2vw, 1.1rem);
 }
 
 .gallery-left-atmosphere {
-  grid-column: 1 / 7;
+  grid-column: 1 / 6;
+  margin-top: clamp(0.2rem, 0.8vw, 0.7rem);
 }
 
 .gallery-right-portrait {
-  grid-column: 7 / 13;
+  grid-column: 6 / 13;
 }
 
 .gallery-wide-overhead {
   grid-column: 2 / 12;
-  margin-top: clamp(0.7rem, 2.2vw, 1.5rem);
+  margin-top: clamp(0.45rem, 1.6vw, 1.15rem);
 }
 
 .gallery-left-display {
-  grid-column: 1 / 6;
+  grid-column: 1 / 5;
 }
 
 .gallery-right-brand {
-  grid-column: 7 / 13;
-  margin-top: clamp(0.4rem, 1.5vw, 1rem);
+  grid-column: 6 / 13;
+  margin-top: clamp(0.25rem, 1vw, 0.8rem);
 }
 
 .gallery-campaign-large {
-  grid-column: 2 / 11;
-  margin-top: clamp(1rem, 3.5vw, 2.6rem);
+  grid-column: 2 / 10;
+  margin-top: clamp(0.7rem, 2.4vw, 1.8rem);
 }
 
 .gallery-closing-wide {
-  grid-column: 1 / 10;
-  margin-top: clamp(0.8rem, 3vw, 2.2rem);
+  grid-column: 1 / 9;
+  margin-top: clamp(0.55rem, 2vw, 1.5rem);
 }
 
 .gallery-closing-detail {
   grid-column: 9 / 13;
-  align-self: end;
-  margin-bottom: clamp(1rem, 2.4vw, 1.8rem);
-  position: relative;
-  top: clamp(-2.6rem, -4.2vw, -1.4rem);
+  align-self: start;
+  margin-top: clamp(-1.1rem, -2.1vw, -0.55rem);
+}
+
+.gallery-closing-detail + .gallery-closing-detail {
+  margin-top: clamp(-0.5rem, -1.2vw, -0.25rem);
 }
 
 .section-marquee {
