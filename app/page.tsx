@@ -252,6 +252,68 @@ export default async function HomePage() {
           <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
         </div>
 
+        <div className="creative-video-layout">
+          <figure className="creative-video-item creative-video-feature">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="/videos/ages-amalie-reel.mp4"
+                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+              />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-a">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="/videos/Grand%20hotel%20.mp4"
+                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+              />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-b">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="/videos/Ages_campain_Reel_2_mp4.mp4"
+                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+              />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-c">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="/videos/Videoe_fashion_Week_portefølje.mp4"
+                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+              />
+            </video>
+          </figure>
+        </div>
+
         <p className="creative-video-footnote">
           Kreativ retning · Stiluttrykk · Innhold · Redigering
         </p>
