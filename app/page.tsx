@@ -246,6 +246,17 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="section reveal">
+        <div className="video-gallery-header">
+          <p className="eyebrow">KREATIVT ARBEID</p>
+          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
+        </div>
+
+        <p className="creative-video-footnote">
+          Kreativ retning · Stiluttrykk · Innhold · Redigering
+        </p>
+      </section>
+
       <section className="section editorial-gallery-section" aria-labelledby="visualt-arbeid-heading">
         <p className="eyebrow">VISUELT ARBEID</p>
         <div className="editorial-gallery-intro">
