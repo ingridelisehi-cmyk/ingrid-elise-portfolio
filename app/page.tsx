@@ -294,6 +294,20 @@ export default async function HomePage() {
               <source src="/videos/Ages_campain_Reel_2_mp4.mp4" type="video/mp4" />
             </video>
           </figure>
+
+          <figure className="creative-video-item creative-video-side-c">
+            <video
+              className="creative-video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/Videoe_fashion_Week_portefølje.mp4" type="video/mp4" />
+            </video>
+          </figure>
         </div>
 
         <p className="creative-video-footnote">

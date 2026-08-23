@@ -511,7 +511,8 @@ p {
   grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
   grid-template-areas:
     "feature side-a"
-    "feature side-b";
+    "feature side-b"
+    "feature side-c";
   align-items: start;
   gap: clamp(1.4rem, 3.3vw, 2.7rem);
 }
@@ -524,14 +525,22 @@ p {
 
 .creative-video-feature {
   grid-area: feature;
+  max-width: min(100%, 560px);
 }
 
 .creative-video-side-a {
   grid-area: side-a;
+  max-width: min(100%, 340px);
 }
 
 .creative-video-side-b {
   grid-area: side-b;
+  max-width: min(100%, 340px);
+}
+
+.creative-video-side-c {
+  grid-area: side-c;
+  max-width: min(100%, 340px);
 }
 
 .creative-video {
@@ -641,8 +650,8 @@ p {
 }
 
 .gallery-right-brand {
-  grid-column: 6 / 13;
-  margin-top: clamp(-1.2rem, -2.4vw, -0.6rem);
+  grid-column: 7 / 13;
+  margin-top: clamp(0.4rem, 1.5vw, 1rem);
 }
 
 .gallery-campaign-large {
@@ -656,13 +665,11 @@ p {
 }
 
 .gallery-closing-detail {
-  grid-column: 6 / 13;
-  align-self: start;
-  margin-top: clamp(-6.5rem, -11vw, -3.8rem);
-}
-
-.gallery-closing-detail + .gallery-closing-detail {
-  margin-top: clamp(-8rem, -13vw, -4.5rem);
+  grid-column: 9 / 13;
+  align-self: end;
+  margin-bottom: clamp(1rem, 2.4vw, 1.8rem);
+  position: relative;
+  top: clamp(-2.6rem, -4.2vw, -1.4rem);
 }
 
 .section-marquee {
@@ -1584,7 +1591,15 @@ p {
     grid-template-areas:
       "feature"
       "side-a"
-      "side-b";
+      "side-b"
+      "side-c";
+  }
+
+  .creative-video-feature,
+  .creative-video-side-a,
+  .creative-video-side-b,
+  .creative-video-side-c {
+    max-width: min(100%, 420px);
   }
 
   .editorial-gallery-grid {
@@ -1694,7 +1709,8 @@ p {
     grid-template-areas:
       "feature"
       "side-a"
-      "side-b";
+      "side-b"
+      "side-c";
     gap: 1.05rem;
   }
 
