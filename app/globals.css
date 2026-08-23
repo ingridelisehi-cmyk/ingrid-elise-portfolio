@@ -508,12 +508,10 @@ p {
 
 .creative-video-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
-  grid-template-areas:
-    "feature side-a"
-    "feature side-b"
-    "feature side-c";
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas: "feature side-a side-b side-c";
   align-items: start;
+  justify-items: center;
   gap: clamp(1.4rem, 3.3vw, 2.7rem);
 }
 
