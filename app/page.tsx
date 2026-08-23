@@ -261,10 +261,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source
-                src="/videos/ages-amalie-reel.mp4"
-                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-              />
+              <source src="/videos/ages-amalie-reel.mp4" />
             </video>
           </figure>
 
@@ -276,10 +273,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source
-                src="/videos/Grand%20hotel%20.mp4"
-                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-              />
+              <source src="/videos/Grand%20hotel%20.mp4" />
             </video>
           </figure>
 
@@ -291,10 +285,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source
-                src="/videos/Ages_campain_Reel_2_mp4.mp4"
-                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-              />
+              <source src="/videos/Ages_campain_Reel_2_mp4.mp4" />
             </video>
           </figure>
 
@@ -306,10 +297,7 @@ export default async function HomePage() {
               controls
               preload="metadata"
             >
-              <source
-                src="/videos/Videoe_fashion_Week_portefølje.mp4"
-                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-              />
+              <source src="/videos/Videoe_fashion_Week_portefølje.mp4" />
             </video>
           </figure>
         </div>
