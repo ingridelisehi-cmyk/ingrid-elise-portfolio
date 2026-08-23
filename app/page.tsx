@@ -257,8 +257,6 @@ export default async function HomePage() {
             <video
               className="creative-video"
               playsInline
-              muted
-              autoPlay
               loop
               controls
               preload="metadata"
@@ -271,8 +269,6 @@ export default async function HomePage() {
             <video
               className="creative-video"
               playsInline
-              muted
-              autoPlay
               loop
               controls
               preload="metadata"
@@ -285,8 +281,6 @@ export default async function HomePage() {
             <video
               className="creative-video"
               playsInline
-              muted
-              autoPlay
               loop
               controls
               preload="metadata"
@@ -299,8 +293,6 @@ export default async function HomePage() {
             <video
               className="creative-video"
               playsInline
-              muted
-              autoPlay
               loop
               controls
               preload="metadata"
