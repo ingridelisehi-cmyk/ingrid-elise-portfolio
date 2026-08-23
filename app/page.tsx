@@ -4,7 +4,6 @@ import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
 import {parseHomepageData} from "@/sanity/lib/validation";
-import HomeCreativeVideos from "@/components/HomeCreativeVideos";
 
 export default async function HomePage() {
   type EditorialGalleryImage = {
@@ -247,7 +246,66 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <HomeCreativeVideos />
+      <section className="section reveal">
+        <div className="video-gallery-header">
+          <p className="eyebrow">KREATIVT ARBEID</p>
+          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
+        </div>
+
+        <div className="creative-video-layout">
+          <figure className="creative-video-item creative-video-feature">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-a">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/Grand hotel .mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-b">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/Ages_campain_Reel_2_mp4.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <figure className="creative-video-item creative-video-side-c">
+            <video
+              className="creative-video"
+              playsInline
+              loop
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/Videoe_fashion_Week_portefølje.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </div>
+
+        <p className="creative-video-footnote">
+          Kreativ retning · Stiluttrykk · Innhold · Redigering
+        </p>
+      </section>
 
       <section className="section editorial-gallery-section" aria-labelledby="visualt-arbeid-heading">
         <p className="eyebrow">VISUELT ARBEID</p>
