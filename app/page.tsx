@@ -212,7 +212,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="home-hero editorial-home reveal">
+      <section className="home-hero editorial-home home-intro-panel reveal">
         <p className="eyebrow">Hei, jeg er Ingrid.</p>
         <div className="hero-layout editorial-hero-layout">
           <div>
@@ -246,65 +246,67 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section reveal">
-        <div className="video-gallery-header">
-          <p className="eyebrow">KREATIVT ARBEID</p>
-          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
+      <section className="section reveal creative-video-section">
+        <div className="creative-video-shell">
+          <div className="video-gallery-header">
+            <p className="eyebrow">KREATIVT ARBEID</p>
+            <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
+          </div>
+
+          <div className="creative-video-layout">
+            <figure className="creative-video-item creative-video-feature">
+              <video
+                className="creative-video"
+                playsInline
+                loop
+                controls
+                preload="metadata"
+              >
+                <source src="/videos/ages-amalie-reel.mp4" />
+              </video>
+            </figure>
+
+            <figure className="creative-video-item creative-video-side-a">
+              <video
+                className="creative-video"
+                playsInline
+                loop
+                controls
+                preload="metadata"
+              >
+                <source src="/videos/Grand%20hotel%20.mp4" />
+              </video>
+            </figure>
+
+            <figure className="creative-video-item creative-video-side-b">
+              <video
+                className="creative-video"
+                playsInline
+                loop
+                controls
+                preload="metadata"
+              >
+                <source src="/videos/Ages_campain_Reel_2_mp4.mp4" />
+              </video>
+            </figure>
+
+            <figure className="creative-video-item creative-video-side-c">
+              <video
+                className="creative-video"
+                playsInline
+                loop
+                controls
+                preload="metadata"
+              >
+                <source src="/videos/Videoe_fashion_Week_portefølje.mp4" />
+              </video>
+            </figure>
+          </div>
+
+          <p className="creative-video-footnote">
+            Kreativ retning · Stiluttrykk · Innhold · Redigering
+          </p>
         </div>
-
-        <div className="creative-video-layout">
-          <figure className="creative-video-item creative-video-feature">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/ages-amalie-reel.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-a">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Grand%20hotel%20.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-b">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Ages_campain_Reel_2_mp4.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-c">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Videoe_fashion_Week_portefølje.mp4" />
-            </video>
-          </figure>
-        </div>
-
-        <p className="creative-video-footnote">
-          Kreativ retning · Stiluttrykk · Innhold · Redigering
-        </p>
       </section>
 
       <section className="section editorial-gallery-section" aria-labelledby="visualt-arbeid-heading">

@@ -11,6 +11,10 @@
   --oxblood: #5e3139;
   --line: #d4c8bb;
   --line-soft: rgba(113, 90, 68, 0.2);
+  --panel-night: #151211;
+  --panel-night-soft: #211a18;
+  --highlight-cream: #f3efc9;
+  --hero-glow: rgba(124, 100, 76, 0.2);
   --font-sans-ui: var(--font-inter), "Suisse Intl", "Neue Haas Grotesk Text", "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-serif-editorial: var(--font-cormorant), "Ivar Text", "Canela", "Noe Display", "Bodoni Moda", "Times New Roman", serif;
 }
@@ -27,7 +31,10 @@
 
 body {
   margin: 0;
-  background: var(--cream);
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(124, 100, 76, 0.14) 0%, transparent 48%),
+    radial-gradient(110% 85% at 88% 8%, rgba(94, 49, 57, 0.08) 0%, transparent 44%),
+    var(--cream);
   color: var(--near-black);
   font-family: var(--font-sans-ui);
   line-height: 1.66;
@@ -274,6 +281,89 @@ p {
   padding-top: clamp(0.8rem, 2.5vw, 1.6rem);
 }
 
+.home-intro-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--charcoal));
+  border-radius: clamp(16px, 2.2vw, 28px);
+  padding: clamp(1.3rem, 3.2vw, 2.8rem);
+  background:
+    linear-gradient(140deg, rgba(31, 27, 25, 0.92) 0%, rgba(49, 37, 30, 0.82) 42%, rgba(93, 72, 56, 0.7) 100%);
+  box-shadow:
+    0 36px 56px rgba(22, 17, 14, 0.2),
+    inset 0 1px 0 rgba(255, 249, 236, 0.15);
+}
+
+.home-intro-panel::before {
+  content: "";
+  position: absolute;
+  inset: -18% 45% -30% -24%;
+  background: radial-gradient(circle at 40% 46%, var(--hero-glow), transparent 72%);
+  pointer-events: none;
+}
+
+.home-intro-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 245, 225, 0.07) 0.8px, transparent 0.8px);
+  background-size: 3px 3px;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.home-intro-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-intro-panel .eyebrow {
+  color: color-mix(in srgb, var(--highlight-cream) 78%, white);
+}
+
+.home-intro-panel .hero-title {
+  color: var(--highlight-cream);
+  font-size: clamp(2.1rem, 4.5vw, 4rem);
+  max-width: 13ch;
+  letter-spacing: -0.006em;
+}
+
+.home-intro-panel .hero-title-accent {
+  color: color-mix(in srgb, var(--highlight-cream) 76%, var(--warm-white));
+}
+
+.home-intro-panel .home-story-lead {
+  color: color-mix(in srgb, white 90%, var(--highlight-cream));
+  max-width: 50ch;
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.62;
+}
+
+.home-intro-panel .hero-note {
+  border-left-color: rgba(244, 237, 203, 0.34);
+}
+
+.home-intro-panel .editorial-quote {
+  color: color-mix(in srgb, var(--highlight-cream) 84%, white);
+}
+
+.home-intro-panel .home-cta-row .btn {
+  border-color: rgba(243, 239, 201, 0.6);
+  color: var(--highlight-cream);
+  background: rgba(255, 251, 233, 0.04);
+}
+
+.home-intro-panel .home-cta-row .btn:hover {
+  background: rgba(255, 251, 233, 0.12);
+  border-color: rgba(243, 239, 201, 0.9);
+  color: white;
+}
+
+.home-intro-panel .home-cta-row .btn-secondary {
+  background: rgba(255, 251, 233, 0.02);
+}
+
 .editorial-hero-layout {
   grid-template-columns: minmax(0, 1fr) minmax(180px, 0.44fr);
   align-items: start;
@@ -499,11 +589,32 @@ p {
   margin-bottom: clamp(1.5rem, 3vw, 2.1rem);
 }
 
+.creative-video-section {
+  margin-top: clamp(3.4rem, 7.5vw, 6.2rem);
+}
+
+.creative-video-shell {
+  border-radius: clamp(16px, 2.2vw, 28px);
+  border: 1px solid color-mix(in srgb, var(--panel-night-soft) 40%, var(--line));
+  background:
+    linear-gradient(165deg, rgba(19, 16, 15, 0.98) 0%, rgba(29, 24, 22, 0.98) 100%);
+  padding: clamp(1.3rem, 3vw, 2.4rem);
+  box-shadow: 0 30px 48px rgba(20, 16, 14, 0.22);
+}
+
+.creative-video-section .video-gallery-header .eyebrow {
+  color: color-mix(in srgb, var(--highlight-cream) 72%, white);
+}
+
 .video-gallery-header h2 {
   max-width: 18ch;
   font-family: var(--font-serif-editorial);
-  font-size: clamp(1.66rem, 2.7vw, 2.35rem);
+  font-size: clamp(1.66rem, 2.9vw, 2.55rem);
   line-height: 1.12;
+}
+
+.creative-video-section .video-gallery-header h2 {
+  color: var(--highlight-cream);
 }
 
 .creative-video-layout {
@@ -548,10 +659,10 @@ p {
   max-width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: contain;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid var(--line-soft);
-  box-shadow: 0 10px 24px rgba(40, 35, 29, 0.08);
+  border-radius: 12px;
+  background: #0f0d0c;
+  border: 1px solid rgba(243, 239, 201, 0.18);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.34);
 }
 
 .creative-video-feature .creative-video {
@@ -560,15 +671,20 @@ p {
 }
 
 .creative-video-footnote {
-  margin-top: 0.95rem;
+  margin-top: 1.2rem;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--taupe);
+  color: color-mix(in srgb, var(--highlight-cream) 68%, var(--line));
 }
 
 .editorial-gallery-section {
   margin-top: clamp(3rem, 7vw, 5.5rem);
+  border: 1px solid color-mix(in srgb, var(--line) 85%, var(--warm-white));
+  border-radius: clamp(14px, 2vw, 24px);
+  padding: clamp(1.2rem, 2.9vw, 2.2rem);
+  background: color-mix(in srgb, var(--warm-white) 80%, #f5efc9 20%);
+  box-shadow: 0 24px 38px rgba(89, 66, 50, 0.08);
 }
 
 .editorial-gallery-intro {
@@ -739,6 +855,10 @@ p {
 .home-closing-editorial {
   margin-top: clamp(4.2rem, 8vw, 7rem);
   max-width: 78ch;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, var(--warm-white));
+  border-radius: clamp(14px, 2vw, 24px);
+  padding: clamp(1.2rem, 2.8vw, 2.1rem);
+  background: color-mix(in srgb, var(--warm-white) 82%, #f6f0df 18%);
 }
 
 .home-closing-title {
@@ -1552,6 +1672,15 @@ p {
     line-height: 1.14;
   }
 
+  .home-intro-panel {
+    padding: clamp(1.15rem, 4vw, 1.8rem);
+  }
+
+  .home-intro-panel .hero-title {
+    max-width: 14ch;
+    font-size: clamp(1.75rem, 5.8vw, 2.6rem);
+  }
+
   .home-story-lead {
     max-width: 46ch;
     font-size: clamp(0.95rem, 1.9vw, 1.03rem);
@@ -1595,6 +1724,10 @@ p {
       "side-a"
       "side-b"
       "side-c";
+  }
+
+  .creative-video-shell {
+    padding: clamp(1rem, 4vw, 1.4rem);
   }
 
   .creative-video-feature,
@@ -1697,6 +1830,11 @@ p {
     line-height: 1.16;
   }
 
+  .home-intro-panel {
+    border-radius: 14px;
+    padding: 1rem;
+  }
+
   .video-gallery-header h2 {
     max-width: 16ch;
   }
@@ -1720,6 +1858,12 @@ p {
     margin-top: 1rem;
     font-size: 0.68rem;
     letter-spacing: 0.08em;
+  }
+
+  .editorial-gallery-section,
+  .home-closing-editorial,
+  .creative-video-shell {
+    border-radius: 12px;
   }
 
   .home-cta-row {
