@@ -2,29 +2,36 @@ import PortraitImage from "./portrait-image";
 
 export default function AboutPage() {
   return (
-    <section>
-      <p className="eyebrow">Om</p>
-      <h1 className="about-title">
-        Litt mer <span className="about-title-accent">om meg</span>
-      </h1>
+    <section className="about-page">
+      <div className="about-intro">
+        <p className="eyebrow">ABOUT</p>
+        <h1 className="about-title">A LITTLE MORE <span className="about-title-accent">ABOUT ME</span></h1>
+      </div>
 
       <div className="about-grid section">
-        <PortraitImage />
+        <div className="about-portrait-wrap">
+          <PortraitImage />
+        </div>
 
         <div className="grid about-copy" style={{ gap: "1rem" }}>
           <p className="lead">
-            Jeg liker å jobbe der kreativitet og struktur møtes, og trives best
-            når jeg får være tett på både mennesker, ideer og gjennomføring.
+            I’ve always been interested in how an idea can go from something you
+            imagine to something people can actually see, experience and engage
+            with.
           </p>
           <p>
-            Jeg har alltid vært opptatt av hvordan ting ser ut, føles og
-            kommuniseres, men også av hva som faktisk fungerer. Derfor liker jeg
-            å bevege meg mellom det kreative og det praktiske, fra idé og
-            visuell retning til planlegging, koordinering og ferdig resultat.
+            That curiosity has taken me from studying Fashion &amp; Textiles in
+            Sydney to building my own fashion brand, and later to a master’s
+            degree in Marketing Management. Along the way, I’ve worked across
+            concept development, visual direction, content, e-commerce, customer
+            experience and launches. I’ve found that I thrive where creativity
+            and commercial thinking come together.
           </p>
           <p>
-            Jeg lærer fort, liker ansvar og får mye energi av å jobbe sammen med
-            andre som vil skape noe bra.
+            I like taking an idea and turning it into something tangible.
+            Exploring a concept, finding the right visual expression, creating
+            content and developing it until it feels right. I also value
+            structure and momentum. <strong>What gives me the most energy is creating, developing and seeing ideas take shape.</strong>
           </p>
         </div>
       </div>

@@ -23,14 +23,21 @@ export default function RootLayout({
               <Link href="/" className="brand">
                 Ingrid Elise
               </Link>
-              <nav className="site-nav" aria-label="Hovednavigasjon">
-                <a href="/">Hjem</a>
-                <a href="/how-i-think">Hvordan jeg tenker</a>
-                <a href="/projects">Prosjekter</a>
-                <a href="/about">Om</a>
-                <a href="/exploring">Utforsker nå</a>
-                <a href="/contact">Kontakt</a>
+
+              <nav className="desktop-nav" aria-label="Hovednavigasjon">
+                <Link href="/projects">Work</Link>
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
               </nav>
+
+              <details className="mobile-nav" aria-label="Mobilnavigasjon">
+                <summary>Menu</summary>
+                <div className="mobile-nav-panel">
+                  <Link href="/projects">Work</Link>
+                  <Link href="/about">About</Link>
+                  <Link href="/contact">Contact</Link>
+                </div>
+              </details>
             </div>
           </header>
 

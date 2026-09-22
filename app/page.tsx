@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import InteractiveVideo from "@/components/InteractiveVideo";
 import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
@@ -210,202 +211,211 @@ export default async function HomePage() {
     return a.title.localeCompare(b.title, "nb");
   });
 
+  const originalPortfolioVideos = [
+    {
+      src: "/videos/ages-amalie-reel.mp4",
+      label: "01 — Campaign edit",
+      title: "Ages by HS reel",
+    },
+    {
+      src: "/videos/Ages_campain_Reel_2_mp4.mp4",
+      label: "02 — Brand motion",
+      title: "Campaign reel 2",
+    },
+    {
+      src: "/videos/Grand hotel .mp4",
+      label: "03 — Fashion film",
+      title: "Grand Hotel",
+    },
+    {
+      src: "/videos/Videoe_fashion_Week_portef%C3%B8lje.mp4",
+      label: "04 — Fashion week",
+      title: "Portfolio motion",
+    },
+  ];
+
+  const selfInitiatedVideos = [
+    {
+      src: "/Portef%C3%B8lje%20video%203.mp4",
+      label: "01 — THE MORNING EDIT",
+      title: "En morgen fortalt gjennom styling & bevegelse",
+    },
+    {
+      src: "/Portef%C3%B8lje%20video%201.mp4",
+      label: "02 — OUT OF OFFICE",
+      title: "En arbeidsdag flyttet ut av kontoret",
+    },
+    {
+      src: "/Portef%C3%B8lje%20video%202.mp4",
+      label: "03 — ESSENTIALS ONLY",
+      title: "Hverdagsdetaljer fortalt i bevegelse",
+    },
+  ];
+
   return (
     <>
-      <section className="home-hero editorial-home reveal">
-        <p className="eyebrow">Hei, jeg er Ingrid.</p>
-        <div className="hero-layout editorial-hero-layout">
-          <div>
-            <h1 className="hero-title">
-              Jeg liker å forstå hva som får mennesker til å stoppe opp, føle noe og velge.
-            </h1>
-            <p className="lead story-lead home-story-lead">
-              Jeg kombinerer markedsføring, innhold, merkevare og koordinering
-              fra strategi og idé til visuell gjennomføring, publisering og
-              kundeopplevelse.
-            </p>
-            <div className="button-row home-cta-row">
-              <Link href="/projects" className="btn">
-                Se case
-              </Link>
-              <Link href="/how-i-think" className="btn btn-secondary">
-                Hvordan jeg tenker
-              </Link>
-              <Link href="/contact" className="btn btn-secondary">
-                Kontakt
-              </Link>
-            </div>
+      <section className="home-hero editorial-home reveal" aria-label="Forsidehero">
+        <div className="hero-feature">
+          <Image
+            src="/Utvalgte til portefølje/Lansering 14.jpeg"
+            alt="Ingrid Elise portfolio hero visual"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 92vw"
+            className="hero-image"
+          />
+
+          <div className="hero-overlay">
+            <p className="hero-kicker">Brand · Content · Visual Storytelling</p>
+            <h1>Ingrid Elise</h1>
+            <p className="hero-meta">Oslo / Available internationally</p>
           </div>
-
-          <aside className="hero-note editorial-aside">
-            <p className="eyebrow">Kort fortalt</p>
-            <p className="editorial-quote">
-              Markedsføring · innhold · merkevare · koordinering
-            </p>
-          </aside>
         </div>
       </section>
 
-      <section className="section reveal">
-        <div className="video-gallery-header">
-          <p className="eyebrow">KREATIVT ARBEID</p>
-          <h2>Innhold, konsept &amp; visuell kommunikasjon.</h2>
+      <section id="work" className="section editorial-work reveal" aria-label="Selected work">
+        <div className="selected-work-header">
+          <p className="eyebrow">SELECTED WORK</p>
         </div>
 
-        <div className="creative-video-layout">
-          <figure className="creative-video-item creative-video-feature">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/ages-amalie-reel.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-a">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Grand%20hotel%20.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-b">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Ages_campain_Reel_2_mp4.mp4" />
-            </video>
-          </figure>
-
-          <figure className="creative-video-item creative-video-side-c">
-            <video
-              className="creative-video"
-              playsInline
-              loop
-              controls
-              preload="metadata"
-            >
-              <source src="/videos/Videoe_fashion_Week_portefølje.mp4" />
-            </video>
-          </figure>
-        </div>
-
-        <p className="creative-video-footnote">
-          Kreativ retning · Stiluttrykk · Innhold · Redigering
-        </p>
-      </section>
-
-      <section className="section editorial-gallery-section" aria-labelledby="visualt-arbeid-heading">
-        <p className="eyebrow">VISUELT ARBEID</p>
-        <div className="editorial-gallery-intro">
-          <h2 id="visualt-arbeid-heading">Utvalgte øyeblikk, innhold &amp; merkevarearbeid.</h2>
-          <p className="muted editorial-gallery-support">
-            Et visuelt utvalg fra arbeid med Ages by HS – fra kampanjeinnhold
-            og stiluttrykk til lanseringer, arrangementer og merkevarebygging.
-          </p>
-        </div>
-
-        <div className="editorial-gallery-grid">
-          {editorialGalleryImages.map((image, index) => (
-            <figure key={image.key} className={`editorial-gallery-item ${image.className}`}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                sizes={image.sizes}
-                className="editorial-gallery-image"
-                quality={95}
-                style={{ maxWidth: `${image.maxDisplayWidth ?? image.width}px` }}
-                priority={index === 0}
-              />
-              {image.label ? (
-                <figcaption className="editorial-gallery-label" aria-hidden="true"> </figcaption>
-              ) : null}
-            </figure>
+        <div className="selected-work-grid">
+          {originalPortfolioVideos.map((video, index) => (
+            <InteractiveVideo
+              key={video.src}
+              src={video.src}
+              label={video.label}
+              title={video.title}
+              className={`selected-work-item item-${index + 1}`}
+            />
           ))}
         </div>
       </section>
 
-      <section className="section section-marquee reveal" aria-label="Fagområder">
-        <div className="marquee-wrap">
-          <div className="marquee-track">
-            <p>MARKEDSFØRING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
-            <p aria-hidden="true">MARKEDSFØRING, MERKEVARE, INNHOLD, KUNDEOPPLEVELSE, MOTE, STRATEGI, KREATIVT ARBEID</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section editorial-section reveal">
-        <p className="eyebrow">Utvalgt arbeid</p>
-        <div className="perspective-grid projects-intro-grid">
-          <div>
-            <h2>Et utvalg prosjekter jeg har jobbet med.</h2>
-          </div>
-        </div>
-
-        <div className="project-editorial-list">
-          {orderedFeaturedProjects.map((project, index) => {
-            const href =
-              project.slug
-                ? `/projects/${project.slug}`
-                : featuredSlugByTitle[project.title]
-                  ? `/projects/${featuredSlugByTitle[project.title]}`
-                  : "/projects";
-            const projectMeta = projectMetaByTitle[project.title];
-            const number = String(index + 1).padStart(2, "0");
-
-            return (
-              <article
-                key={project.title}
-                className={`project-editorial-item reveal${projectMeta?.imageUrl ? " has-preview" : ""}`}
-              >
-                <div className="project-editorial-main">
-                  <h3 className="project-editorial-title">{number}. {project.title}</h3>
-                  <p className="project-editorial-areas">{projectMeta?.areas ?? project.description}</p>
-                  <Link href={href} className="project-editorial-link">
-                    Se prosjekt →
-                  </Link>
+      <section className="section editorial-work reveal" aria-label="Ages by HS">
+        <div className="editorial-projects">
+          <article className="editorial-project">
+            <header className="editorial-project-header">
+              <span className="project-number">01</span>
+              <div className="project-heading-wrap">
+                <h2 className="project-heading">AGES BY HS</h2>
+                <div className="project-meta-row">
+                  <span>Brand Direction</span>
+                  <span>Campaign</span>
+                  <span>Content</span>
+                  <span>E-commerce</span>
                 </div>
-                {projectMeta?.imageUrl ? (
-                  <div className="project-editorial-preview" aria-hidden="true">
-                    <img src={projectMeta.imageUrl} alt="" loading="lazy" />
-                  </div>
-                ) : null}
-              </article>
-            );
-          })}
+              </div>
+            </header>
+
+            <p className="case-intro">
+              Independent fashion brand shaped by brand direction, campaign storytelling and product-led content.
+            </p>
+
+            <div className="editorial-visual-grid ages-grid">
+              <figure className="editorial-visual visual-feature">
+                <Image
+                  src="/Utvalgte til portefølje/Lansering 14.jpeg"
+                  alt="Ages by HS campaign edit"
+                  width={1400}
+                  height={900}
+                  className="editorial-image"
+                  priority
+                  sizes="(max-width: 760px) 100vw, 68vw"
+                />
+              </figure>
+
+              <div className="editorial-side-stack">
+                <figure className="editorial-visual visual-portrait">
+                  <Image
+                    src="/Utvalgte til portefølje/bilder til portefølje 29.jpeg"
+                    alt="Ages by HS portrait detail"
+                    width={900}
+                    height={1200}
+                    className="editorial-image"
+                    sizes="(max-width: 760px) 100vw, 32vw"
+                  />
+                </figure>
+
+                <figure className="editorial-visual visual-video">
+                  <video
+                    className="editorial-video"
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    controls={false}
+                  >
+                    <source src="/videos/ages-amalie-reel.mp4" type="video/mp4" />
+                  </video>
+                  <span className="play-indicator" aria-hidden="true" />
+                </figure>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section className="section reveal work-with-me home-closing home-closing-editorial">
-        <p className="eyebrow">Om meg</p>
-        <h2 className="home-closing-title">Jeg er nysgjerrig, lærevillig og liker å gjøre ideer om til noe som fungerer i praksis.</h2>
-        <p className="lead">
-          Jeg trives i skjæringspunktet mellom kreativitet og struktur, og
-          liker å jobbe med mennesker, innhold, merkevare og koordinering. Jeg
-          lærer raskt, tar initiativ og liker å få mange detaljer til å henge
-          sammen.
-        </p>
-        <div className="button-row">
-          <Link href="/about" className="btn">
-            Les mer
-          </Link>
-          <Link href="/contact" className="btn btn-secondary">
-            Kontakt
-          </Link>
+      <section className="section editorial-work reveal" aria-label="Personal studies">
+        <div className="editorial-projects">
+          <article className="editorial-project personal-studies">
+            <header className="editorial-project-header">
+              <span className="project-number">02</span>
+              <div className="project-heading-wrap">
+                <h2 className="project-heading">PERSONAL STUDIES</h2>
+                <div className="project-meta-row">
+                  <span>Fashion</span>
+                  <span>Lifestyle</span>
+                  <span>Social-first Content</span>
+                </div>
+              </div>
+            </header>
+
+            <div className="study-grid">
+              {selfInitiatedVideos.map((video, index) => (
+                <InteractiveVideo
+                  key={video.src}
+                  src={video.src}
+                  label={video.label}
+                  className={`study-piece piece-${index + 1}`}
+                />
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section about-home reveal" aria-labelledby="about-home-heading">
+        <div className="about-home-grid">
+          <div className="about-home-image">
+            <Image
+              src="/portrait.jpg"
+              alt="Portrait of Ingrid Elise"
+              width={640}
+              height={800}
+              className="portrait"
+              priority
+            />
+          </div>
+
+          <div className="about-home-copy">
+            <p className="eyebrow">About</p>
+            <h2 id="about-home-heading">ABOUT</h2>
+            <p>
+              I combine a background in Fashion &amp; Textiles, building my own fashion brand, with a master&apos;s degree in Marketing Management.
+            </p>
+            <Link href="/about" className="about-home-link">Read more</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section contact-home reveal" aria-labelledby="contact-home-heading">
+        <p className="eyebrow">Contact</p>
+        <h2 id="contact-home-heading">LET&apos;S CREATE SOMETHING.</h2>
+        <div className="contact-home-meta">
+          <a href="mailto:ingridelisehi@hotmail.com">ingridelisehi@hotmail.com</a>
+          <a href="https://www.linkedin.com/in/ingrid-elise-endal-hildre-2b57271b5" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
         </div>
       </section>
     </>
