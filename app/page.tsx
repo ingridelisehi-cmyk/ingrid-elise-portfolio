@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import InteractiveVideo from "@/components/InteractiveVideo";
+import "./video-layout.css";
 import {client} from "@/sanity/lib/client";
 import {fallbackFeaturedProjects} from "@/sanity/lib/fallbacks";
 import {homepageQuery} from "@/sanity/lib/queries";
@@ -213,17 +214,17 @@ export default async function HomePage() {
 
   const originalPortfolioVideos = [
     {
-      src: "/videos/ages-amalie-reel.mp4",
+      src: "/videos/ages-amalie-reel.mp4#t=0.1",
       label: "01 — Campaign edit",
       title: "Ages by HS reel",
     },
     {
-      src: "/videos/Ages_campain_Reel_2_mp4.mp4",
+      src: "/videos/Ages_campain_Reel_2_mp4.mp4#t=0.1",
       label: "02 — Brand motion",
       title: "Campaign reel 2",
     },
     {
-      src: "/videos/grand-hotel-runway.mp4",
+      src: "/videos/grand-hotel-runway.mp4#t=0.1",
       label: "03 — Fashion film",
       title: "Grand Hotel",
     },
@@ -231,17 +232,17 @@ export default async function HomePage() {
 
   const selfInitiatedVideos = [
     {
-      src: "/Portef%C3%B8lje%20video%203.mp4",
+      src: "/Portef%C3%B8lje%20video%203.mp4#t=0.1",
       label: "01 — THE MORNING EDIT",
       title: "En morgen fortalt gjennom styling & bevegelse",
     },
     {
-      src: "/videos/working-boots-on.mp4",
+      src: "/videos/working-boots-on.mp4#t=0.1",
       label: "02 — OUT OF OFFICE",
       title: "En arbeidsdag flyttet ut av kontoret",
     },
     {
-      src: "/Portef%C3%B8lje%20video%202.mp4",
+      src: "/Portef%C3%B8lje%20video%202.mp4#t=0.1",
       label: "03 — ESSENTIALS ONLY",
       title: "Hverdagsdetaljer fortalt i bevegelse",
     },
@@ -273,14 +274,14 @@ export default async function HomePage() {
           <p className="eyebrow">SELECTED WORK</p>
         </div>
 
-        <div className="selected-work-grid">
-          {originalPortfolioVideos.map((video, index) => (
+        <div className="reel-grid">
+          {originalPortfolioVideos.map((video) => (
             <InteractiveVideo
               key={video.src}
               src={video.src}
               label={video.label}
               title={video.title}
-              className={`selected-work-item item-${index + 1}`}
+              className="reel-card"
             />
           ))}
         </div>
@@ -365,13 +366,13 @@ export default async function HomePage() {
               </div>
             </header>
 
-            <div className="study-grid">
-              {selfInitiatedVideos.map((video, index) => (
+            <div className="reel-grid">
+              {selfInitiatedVideos.map((video) => (
                 <InteractiveVideo
                   key={video.src}
                   src={video.src}
                   label={video.label}
-                  className={`study-piece piece-${index + 1}`}
+                  className="reel-card"
                 />
               ))}
             </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import InteractiveVideo from "@/components/InteractiveVideo";
+import "../video-layout.css";
 import {client} from "@/sanity/lib/client";
 import {fallbackProjects} from "@/sanity/lib/fallbacks";
 import {projectsQuery} from "@/sanity/lib/queries";
@@ -42,17 +43,17 @@ export default async function ProjectsPage() {
 
   const originalPortfolioVideos = [
     {
-      src: "/videos/ages-amalie-reel.mp4",
+      src: "/videos/ages-amalie-reel.mp4#t=0.1",
       label: "01 — Campaign edit",
       title: "Ages by HS reel",
     },
     {
-      src: "/videos/Ages_campain_Reel_2_mp4.mp4",
+      src: "/videos/Ages_campain_Reel_2_mp4.mp4#t=0.1",
       label: "02 — Brand motion",
       title: "Campaign reel 2",
     },
     {
-      src: "/videos/grand-hotel-runway.mp4",
+      src: "/videos/grand-hotel-runway.mp4#t=0.1",
       label: "03 — Fashion film",
       title: "Grand Hotel",
     },
@@ -60,15 +61,15 @@ export default async function ProjectsPage() {
 
   const personalStudies = [
     {
-      src: "/Portef%C3%B8lje%20video%203.mp4",
+      src: "/Portef%C3%B8lje%20video%203.mp4#t=0.1",
       label: "THE MORNING EDIT",
     },
     {
-      src: "/videos/working-boots-on.mp4",
+      src: "/videos/working-boots-on.mp4#t=0.1",
       label: "OUT OF OFFICE",
     },
     {
-      src: "/Portef%C3%B8lje%20video%202.mp4",
+      src: "/Portef%C3%B8lje%20video%202.mp4#t=0.1",
       label: "ESSENTIALS ONLY",
     },
   ];
@@ -113,14 +114,14 @@ export default async function ProjectsPage() {
           <p className="eyebrow">SELECTED MOTION</p>
         </header>
 
-        <div className="featured-video-grid">
-          {originalPortfolioVideos.map((video, index) => (
+        <div className="reel-grid">
+          {originalPortfolioVideos.map((video) => (
             <InteractiveVideo
               key={video.src}
               src={video.src}
               label={video.label}
               title={video.title}
-              className={`creative-video-item item-${index + 1}`}
+              className="reel-card"
             />
           ))}
         </div>
@@ -134,13 +135,13 @@ export default async function ProjectsPage() {
           </p>
         </header>
 
-        <div className="series-grid">
-          {personalStudies.map((video, index) => (
+        <div className="reel-grid">
+          {personalStudies.map((video) => (
             <InteractiveVideo
               key={video.src}
               src={video.src}
               label={video.label}
-              className={`study-card ${index === 0 ? "study-card-feature" : "study-card-support"}`}
+              className="reel-card"
             />
           ))}
         </div>
