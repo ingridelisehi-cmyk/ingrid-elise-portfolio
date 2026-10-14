@@ -52,14 +52,9 @@ export default async function ProjectsPage() {
       title: "Campaign reel 2",
     },
     {
-      src: "/videos/Grand hotel .mp4",
+      src: "/videos/grand-hotel-runway.mp4",
       label: "03 — Fashion film",
       title: "Grand Hotel",
-    },
-    {
-      src: "/videos/Videoe_fashion_Week_portef%C3%B8lje.mp4",
-      label: "04 — Fashion week",
-      title: "Portfolio motion",
     },
   ];
 
@@ -69,7 +64,7 @@ export default async function ProjectsPage() {
       label: "THE MORNING EDIT",
     },
     {
-      src: "/Portef%C3%B8lje%20video%201.mp4",
+      src: "/videos/working-boots-on.mp4",
       label: "OUT OF OFFICE",
     },
     {
