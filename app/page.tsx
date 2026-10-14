@@ -232,7 +232,7 @@ export default async function HomePage() {
 
   const selfInitiatedVideos = [
     {
-      src: "/Portef%C3%B8lje%20video%203.mp4#t=0.1",
+      src: "/videos/the-morning-edit.mp4#t=0.1",
       label: "01 — THE MORNING EDIT",
       title: "En morgen fortalt gjennom styling & bevegelse",
     },

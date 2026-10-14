@@ -61,7 +61,7 @@ export default async function ProjectsPage() {
 
   const personalStudies = [
     {
-      src: "/Portef%C3%B8lje%20video%203.mp4#t=0.1",
+      src: "/videos/the-morning-edit.mp4#t=0.1",
       label: "THE MORNING EDIT",
     },
     {
